@@ -7,7 +7,7 @@ class Distribuidoras(models.Model):
     cliente = models.ForeignKey(Clientes, on_delete=models.SET_NULL, null=True)
 
     class Meta:
-        db_table = 'distribuidoras_distribuidoras'
+        db_table = 'Distribuidoras_distribuidoras'
 
     def __str__(self) -> str:
         return self.nome
