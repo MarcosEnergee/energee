@@ -10,7 +10,7 @@ class Administradores(models.Model):
     uc = models.CharField(max_length=50)
 
     class Meta:
-        db_table = 'administradores_administradores'
+        db_table = 'Administradores_administradores'
 
     def __str__(self) -> str:
         return self.nome
