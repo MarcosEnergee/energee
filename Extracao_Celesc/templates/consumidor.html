@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Relatorios{% endblock %}
+
+{% block 'titulo'%}
+  <h6 class="text-white text-capitalize ps-3">Extracao</h6>
+{% endblock %}
+
+
+{% block 'dashboard'%}
+<div id="bg-spinner">
+    <div id="position-spinner">
+        <span id="spinner"></span>
+    </div>
+</div>
+<center>
+
+{% if not cli%}
+
+
+
+<div class="vazio">
+    <form action="{% url 'FileExtracao' %}" method="POST" enctype="multipart/form-data">
+        
+        <span>Cliente</span>
+        <select name="cliente" class="selectCli">
+            {% for cliente in clientes %}
+            <option value="{{cliente.id}}">{{cliente.nome}}</option>
+            {% endfor %}
+        </select>
+
+        <span>Distribuidoras</span>
+        <select name="dist" class="selectCli">
+            {% for distribuidora in distribuidoras %}
+            <option value="{{distribuidora.id}}">{{distribuidora.nome}}</option>
+            {% endfor %}
+        </select>
+        
+        <input type="file" name="uploadedFile">
+        {% csrf_token %}
+        <input type="hidden" name="tipo" value="consumidor">
+        <input type="submit" multiple="mutiple" id="doc[]" value="Carregar" class="btn" style="background-color: #8d35f2; color: white;">
+    
+    </form>
+</div>
+{% endif %}
+
+    {% if files %}
+    <table class="tablecarregado">
+        <tr> 
+           <th>{{nome}}</th>
+        </tr>
+    </table>
+
+    <table>
+
+        {% if dist == '1' %}
+            <tr>
+                <a class="btn" id="btn-cons"  style="background-color: #8d35f2; color: white;" href="{% url 'extracaoconsumidor' cli %}">Extrair</a>
+            </tr>
+        {% endif %}
+        
+        {% if dist == '2' %}
+            <tr>
+                <a class="btn" id="btn-cons"  style="background-color: #8d35f2; color: white;" href="{% url 'extracaoCelesc' cli %}">Extrair</a>
+            </tr>
+        {% endif %}
+    </table>
+    {% endif %}
+</center>
+
+{% endblock %}
+
+{% block 'js' %}
+
+
+
+<script> 
+    jQuery(function ($) {
+        $(document).ajaxSend(function () {
+            $("#bg-spinner").fadeIn(500);
+        });
+
+        $("#btn-cons").click(function () {
+            $.ajax({
+                type: 'GET',
+                url:"{% url 'extracaoconsumidor' 1 %}",
+                success: data => {console.log(data);
+                } 
+            }).done(function(){
+                setTimeout(function(){
+                    $("#bg-spinner").fadeOut(500);
+                }, 700);
+            });
+        });
+    });
+</script>
+{% endblock %}

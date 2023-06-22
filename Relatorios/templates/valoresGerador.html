@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Relatorio{% endblock %}
+
+{% block 'titulo'%}Relatorio{% endblock %}
+
+{% block 'user' %}Usuario: {{nome}}{% endblock %}
+
+
+
+{% block 'dashboard'%}
+<div id="bg-spinner">
+  <div id="position-spinner">
+    <span id="spinner"></span>
+  </div>
+</div>
+
+<div class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+>
+  <div class="flex items-center">
+    <a id="btn-g" class="btn cadastrar" href="{% url 'relatorios' %}">Voltar</a>
+  </div>   
+</div>  
+
+  {% if not distribuidoras %}
+  <table class="table align-items-center mb-0">
+    <thead>
+      <tr style="background:#883ef2; ">
+        <th class="text-uppercase th " style=" font-size: 12px;text-align: center; width: 80px; color: #ffffff;font-weight: bold;">Referencia</th>
+        <th class="text-uppercase th " style=" font-size: 12px;text-align: center; width: 80px; color: #ffffff;font-weight: bold;">Geração</th>
+        {% if dist == 2 %}
+        <th class="text-uppercase th " style=" font-size: 12px;text-align: center; width: 80px; color: #ffffff;font-weight: bold;">Geração FP</th>
+        {% endif %}
+        <th class="text-uppercase th " style=" font-size: 12px;text-align: center; width: 80px; color: #ffffff;font-weight: bold;">Consumo</th>
+        {% if dist == 2 %}
+        <th class="text-uppercase th " style=" font-size: 12px;text-align: center; width: 80px; color: #ffffff;font-weight: bold;">Consumo FP</th>
+        {% endif %}
+        <th class="text-uppercase th " style=" font-size: 12px;text-align: center; width: 80px; color: #ffffff;font-weight: bold;">Energia Injetada</th>
+        <th class="text-uppercase th " style=" font-size: 12px;text-align: center; width: 80px; color: #ffffff;font-weight: bold;">Energia Acumulada</th>
+        <th class="text-uppercase th " style=" font-size: 12px;text-align: center; width: 80px; color: #ffffff;font-weight: bold;">Arm. Mensal</th>
+        <th class="text-uppercase th " style=" font-size: 12px;text-align: center; width: 80px; color: #ffffff;font-weight: bold;">Arm. Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for valor in valores %}
+      <tr style="border-bottom: 1px solid #d7d7d7;">
+        {% for i in valor %}
+        <td class="bordaright">
+          <div style="text-align: center; border-right: 1px dashed #7e3af2;" class="f13">
+            {{i}}
+          </div>
+        </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+{% endblock %}
+
+
+{% block 'pagination' %}
+  <div class=" align-items-center ">
+    {% if page.has_previous %}
+      <a id="btn-previo" class="btnpaginator" href="?page={{page.previous_page_number}}">Anterior</a>
+    {% endif %}
+
+    {% if not distribuidoras %}
+    <span class="currenta">{{page.number}}</span> de <span class="currentb">{{page.paginator.num_pages}}</span>
+    {% endif %}
+
+    {% if page.has_next %}
+      <a id="btn-next" class="btnpaginator" href="?page={{page.next_page_number}}">Proxima</a>
+    {% endif %}
+  </div>
+{% endblock %}
+
+
+
+

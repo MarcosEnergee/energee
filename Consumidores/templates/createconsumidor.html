@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Consumidor{% endblock %}
+
+{% block 'titulo'%}Consumidor{% endblock %}
+
+{% block 'user' %}Usuario: {{nome}}{% endblock %}
+
+{% block 'dashboard' %}
+
+<div class="formatualizar">
+  <form action="{% url 'salvarConsum' %}" method="post">
+    {% csrf_token %}
+  
+    <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+  <label class="block text-sm mt-4">
+    <span class="text-gray-700 dark:text-gray-400">Unidade Consumidora </span>
+    <input
+      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+      placeholder="123456" name="uc"
+    />
+  </label>
+
+  <label class="block text-sm mt-4">
+    <span class="text-gray-700 dark:text-gray-400">Nome</span>
+    <input
+      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+      placeholder="Ex: Marcos" name="nome"
+    />
+  </label>
+
+  <label class="block mt-4 text-sm">
+    <span class="text-gray-700 dark:text-gray-400">
+      Cliente
+    </span>
+    <select
+      class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+      id="cliente" name="cliente">
+      {% for cliente in clientes %}
+      <option value="{{cliente.id}}">{{cliente.nome}}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label class="block mt-4 text-sm">
+    <span class="text-gray-700 dark:text-gray-400">
+      Distribuidora
+    </span>
+    <select
+      class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+      id="distribuidora" name="distribuidora">
+      {% for i in distribuidora %}
+      <option value="{{i.id}}">{{i.nome}}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <button class="mt-4 px-4 py-2 text-sm mr-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+  >Cadastrar Consumidor
+  </button>
+  </div>
+  </form>
+</div>
+{% endblock %}

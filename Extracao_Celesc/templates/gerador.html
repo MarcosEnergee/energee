@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Relatorios{% endblock %}
+
+{% block 'titulo'%}
+  <h6 class="text-white text-capitalize ps-3">Extracao</h6>
+{% endblock %}
+
+{% block 'dashboard'%}
+<div id="bg-spinner">
+    <div id="position-spinner">
+        <span id="spinner"></span>
+    </div>
+</div>
+<center>
+
+<div class="vazio">
+    <form action="{% url 'FileExtracao' %}" method="POST" enctype="multipart/form-data">
+        
+        <span>Cliente</span>
+        <select name="cliente" class="selectCli">
+            {% for cliente in clientes %}
+            <option value="{{cliente.id}}">{{cliente.nome}}</option>
+            {% endfor %}
+        </select>
+        
+        <input type="file" name="uploadedFile">
+        {% csrf_token %} 
+        <input type="hidden" name="tipo" value="gerador">
+        <input type="submit" multiple="mutiple" id="doc[]" value="Carregar" class="btn" style="background-color: #8d35f2; color: white;">
+    </form>
+</div>
+
+    {% if files %}
+    <table class="tablecarregado">
+        <tr>
+           <th>{{nome}}</th>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <a class="btn" id="btn-gerad"  style="background-color: #8d35f2; color: white;" href="{% url 'extracaogerador' cli  %}">Extrair</a>
+        </tr>
+    </table>
+    {% endif %}
+</center>
+
+{% endblock %}
+
+{% block 'js' %}
+<script> 
+  jQuery(function ($) {
+      $(document).ajaxSend(function () {
+          $("#bg-spinner").fadeIn(500);
+      });
+
+      $("#btn-gerad").click(function () {
+          $.ajax({
+              type: 'GET',
+              url:"{% url 'extracaogerador' 1 %}",
+              success: data => {console.log(data);
+              } 
+          }).done(function(){
+              setTimeout(function(){
+                  $("#bg-spinner").fadeOut(500);
+              }, 700);
+          });
+      });
+  });
+</script>
+{% endblock %}

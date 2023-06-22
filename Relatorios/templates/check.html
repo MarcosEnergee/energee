@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Relatorios{% endblock %}
+
+{% block 'titulo'%}
+  <h6 class="text-white text-capitalize ps-3">Relatorios</h6>
+{% endblock %}
+
+{% block 'botao'%}
+<a id="btn-g" class="btn cadastrar" href="{% url 'geracao' %}">Geração</a>
+<a id="btn-c" class="btn cadastrar" href="{% url 'consumo' %}">Consumo</a>
+<a id="btn-i" class="btn cadastrar" href="{% url 'injetado' %}">Injetado</a>
+<a id="btn-m" class="btn cadastrar"  href="{% url 'armazenado_mensal' %}">Arm. Mensal</a>
+<a id="btn-t" class="btn cadastrar" href="{% url 'armazenado_total' %}">Arm. Total</a>
+<a id="btn-r"  class="btn cadastrar" href="{% url 'remanescente' %}">Remanescente</a>
+<a id="btn-x" class="btn cadastrar" href="{% url 'check' %}">Check</a>
+{% endblock %}
+
+{% block 'dashboard'%}
+
+<div id="bg-spinner">
+  <div id="position-spinner">
+      <span id="spinner"></span>
+  </div>
+</div>
+
+  {% for i in check %}  
+      <center>
+        <table>
+            <th class="thcCheck">ref.</th>
+            <th class="thcCheck">uc</th>
+            <th class="thcCheck">status</th>
+            <th class="thcCheck">Media Anual</th>
+            <th class="thcCheck">Ult. Cons.</th>
+            <th class="thcCheck">Cons. rem</th>
+            <th class="thcCheck">Credito</th>
+            <th class="thcCheck">Armaz.</th>
+            <th class="thcCheck">Armaz. Ant.</th>
+            <th class="thcCheck">check</th>
+            {% for v in i %}
+              <tr class="">
+                {% for d in v %}
+                  <td class="tdcCheck tdpont">
+                    <p class="tdcheck" id="{{d}}">{{d}}</p>
+                  </td>
+                {% endfor %} 
+              </tr>
+            {% endfor%}
+        </table>
+      </center>   
+  {% endfor%}
+
+{% endblock %}
+
+{% block 'pagination' %}
+  <div class=" align-items-center ">
+    {% if page.has_previous %}
+      <a id="btn-previo" class="btnpaginator" href="?page={{page.previous_page_number}}">Anterior</a>
+    {% endif %}
+
+    <span class="currenta">{{page.number}}</span> de <span class="currentb">{{page.paginator.num_pages}}</span>
+    
+    {% if page.has_next %}
+      <a id="btn-next" class="btnpaginator" href="?page={{page.next_page_number}}">Proxima</a>
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block 'js' %}
+<script>
+  let texto = document.getElementsByClassName('negativo');
+
+</script>
+{% endblock %}

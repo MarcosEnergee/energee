@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Geradores{% endblock %}
+
+{% block 'titulo'%}Geradores{% endblock %}
+
+{% block 'user' %}Usuario: {{nome}}{% endblock %}
+
+{% block 'dashboard'%}
+
+<div class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+>
+  <div class="flex items-center">
+    <a class="text-white-600" href="{% url 'cadastrarGerador' %}">Novo Gerador</a>
+  </div>   
+</div>  
+
+
+<div class="formatualizar">
+  <form action="{% url 'updateGerador' gerador.id %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" id="retornoStatus" value="{{gerador.status}}">
+    <input type="hidden" id="retornoDistribuidora" value="{{gerador.distribuidora}}">
+    <input type="hidden" id="retornoCliente" value="{{gerador.cliente}}">
+  <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+  <label class="block text-sm mt-4">
+    <span class="text-gray-700 dark:text-gray-400">Unidade Consumidora: </span>
+    <input
+      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+      placeholder="Marcos" name="nome" value="{{ gerador.uc }}"
+    />
+  </label>
+
+  <label class="block text-sm mt-4">
+    <span class="text-gray-700 dark:text-gray-400">Nome</span>
+    <input
+      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+      placeholder="Ex: Rua das flores" name="end" value="{{ gerador.nome }}"
+    />
+  </label>
+
+  <label class="block mt-4 text-sm">
+    <span class="text-gray-700 dark:text-gray-400">
+      Cliente
+    </span>
+    <select
+      class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+      id="cliente" name="cliente">
+      {% for cliente in clientes %}
+      <option value="{{cliente.id}}">{{cliente.nome}}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label class="block mt-4 text-sm">
+    <span class="text-gray-700 dark:text-gray-400">
+      Distribuidora
+    </span>
+    <select
+      class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+      id="distribuidora" name="distribuidora">
+      {% for distribuidora in distribuidoras %}
+      <option value="{{distribuidora.id}}">{{distribuidora.nome}}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label class="block mt-4 text-sm">
+    <span class="text-gray-700 dark:text-gray-400">
+      Status
+    </span>
+    <select
+      class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+      name="status" id="status">
+      <option value="1">Ativo</option>
+      <option value="0">Inativo</option>
+    </select>
+  </label>
+
+  <button class="mt-4 px-4 py-2 text-sm mr-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+  >Editar Gerador
+  </button>
+  </div>
+  </form>
+</div>
+{% endblock %}
+
+{% block 'js' %}
+<script>
+  let texto = document.getElementById('retornoDistribuidora').value;
+  let select = document.getElementById('distribuidora')
+  let selectCli = document.getElementById('cliente')
+  let textoCli = document.getElementById('retornoCliente').value;
+
+  SelectedIput(select,texto)
+  SelectedIput(selectCli,textoCli)
+
+  let selectSt = document.getElementById('status')
+  let textoSt = document.getElementById('retornoStatus').value;
+
+  SelectedStatus(selectSt,textoSt)
+
+</script>
+{% endblock %}

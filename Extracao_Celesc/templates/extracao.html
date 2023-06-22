@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Relatorios{% endblock %}
+
+{% block 'titulo'%}
+  <h6 class="text-white text-capitalize ps-3">Extracao</h6>
+{% endblock %}
+
+{% block 'dashboard'%}
+<center>
+
+    <a class="btn" id="btn-consum"  style="background-color: #8d35f2; color: white;" href="{% url 'areaconsumidor' %}">Consumidor</a>
+    <a class="btn" id="btn-gerador"  style="background-color: #8d35f2; color: white;" href="{% url 'areagerador' %}">Gerador</a>
+    <a class="btn" id="btn-azul"  style="background-color: #8d35f2; color: white;" href="{% url 'areaazul' %}">Azul</a>
+
+</center>
+
+{% endblock %}

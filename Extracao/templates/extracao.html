@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Extracao{% endblock %}
+
+{% block 'titulo'%}Extracao{% endblock %}
+
+{% block 'user' %}Usuario: {{nome}}{% endblock %}
+
+{% block 'dashboard'%}
+
+<div class="grid gap-6 mb-8 md:grid-cols-1">
+  <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    <center>
+        <h5 class="mb-6 text-gray-700 dark:text-gray-400">Escolha o tipo de extracao</h5>
+        <a class="btn" id="btn-consum"  style="padding: 8px; border-radius: 5px; margin: 10px;background-color: #8d35f2; color: white;" href="{% url 'areaconsumidor' %}">Consumidor</a>
+        <a class="btn" id="btn-gerador"  style="padding: 8px; border-radius: 5px; margin: 10px;background-color: #8d35f2; color: white;" href="{% url 'areagerador' %}">Gerador</a>
+        <a class="btn" id="btn-azul"  style="padding: 8px; border-radius: 5px; margin: 10px;background-color: #8d35f2; color: white;" href="{% url 'areaazul' %}">Azul</a>
+    </center>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Relatorio{% endblock %}
+
+{% block 'titulo'%}Consumo mês (kwh){% endblock %}
+
+{% block 'user' %}Usuario: {{nome}}{% endblock %}
+
+{% block 'dashboard'%}
+
+{% if nivel == 1 %}
+<div class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+>
+  <div class="flex items-center">
+    <a class="text-white-600 mr-4" href="{% url 'geracao' %}"> Geração</a> 
+    <a class="text-white-600 mr-4" href="{% url 'consumo' %}"> Consumo</a>
+    <a class="text-white-600 mr-4" href="{% url 'armazenado_mensal' %}"> Arm. Mensal</a>
+    <a class="text-white-600 mr-4" href="{% url 'injetado' %}"> Injetado</a>
+    <a class="text-white-600 mr-4" href="{% url 'armazenado_total' %}"> Arm. Total</a>
+    <a class="text-white-600 mr-4" href="{% url 'liberar' %}"> Liberar acesso</a>
+  </div>   
+</div>  
+{% endif %}
+
+<div class="grid gap-6 mb-8 md:grid-cols-1">
+    <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    <center>
+        <table>
+            <th class="thc">Und. Consum.</th>
+            <th class="thc">Valor</th>
+            <th class="thc">Acao</th>
+            {% for consumo in resultado %}
+            <tr class="trc" style="border-bottom: 1px dashed #673AB7;">
+                <td class="tdc tdpont" style="border-right: 1px dashed #673AB7; text-align: center; width: 125px;">
+                   <p class="tduc">{{consumo.uc}}</p>
+                </td>
+                <td class="tdc tdpont" style="border-right: 1px dashed #673AB7; text-align: center; width: 125px;">
+                    <p class="tdvalor">{{consumo.Energia_Ativa}} kwh</p>
+                </td>
+                <td class="tdc" style="text-align: center; width: 125px;">
+                    <form action="{% url 'atualizaConsumo' consumo.id %}" method="get">
+                        <input type="hidden" name="distribuidora" value="{{distribuidora}}">
+                        {% csrf_token %}
+                        <button style="margin: 5px;
+                                    color: white;
+                                    border: 1px solid #673AB7;
+                                    padding: 2px;
+                                    border-radius: 3px;
+                                    background: #673AB7;" 
+                        type="submit" class="btn btnupdate">Alterar Valor</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    </div>
+</div> 
+{% endblock %}

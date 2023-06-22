@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Consumidores{% endblock %}
+
+{% block 'titulo'%}Consumidores{% endblock %}
+
+{% block 'user' %}Usuario: {{nome}}{% endblock %}
+
+{% block 'dashboard'%}
+
+
+<div class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+>
+  <div class="flex items-center">
+    <a class="text-white-600" href="{% url 'cadastrarConsumidor' %}">Novo Consumidor</a>
+  </div>   
+</div>  
+
+<div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+  <div class="w-full overflow-x-auto">
+    <table class="w-full whitespace-no-wrap">
+      <thead>
+        <tr
+          class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+        >
+          <th class="px-4 py-3">Nome Fantasia</th>
+          <th class="px-4 py-3">Und. Consum.</th>
+          <th class="px-4 py-3">Cliente</th>
+          <th class="px-4 py-3">Distribuidora</th>
+          <th class="px-4 py-3">Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody
+        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+      >
+
+      {% for consumidor in consumidores %}
+        <tr class="text-gray-700 dark:text-gray-400">
+          <td class="px-4 py-3">
+            <div class="flex items-center text-sm">
+              <div>
+                <p class="font-semibold">{{consumidor.nome}}</p>
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="px-4 py-3 text-sm">
+            {{consumidor.uc}}
+          </td>
+          <td class="px-4 py-3 text-sm">
+            {{consumidor.cliente}}
+          </td>
+          <td class="centralizado">
+            {% if consumidor.distribuidora_id == 1 %}
+              <p class="nom mb-0 bg_copel">{{consumidor.distribuidora}}</p>
+            {% endif %}
+            {% if consumidor.distribuidora_id == 2 %}
+              <p class="nom mb-0 bg_celesc">{{consumidor.distribuidora}}</p>
+            {% endif %}
+          </td>
+          <td class="px-4 py-3 text-sm">
+
+            {% if consumidor.status == 1 %}
+            <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+              Ativo
+            </span>
+            {% endif %}
+            {% if consumidor.status == 0 %}
+            <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
+              Inativo
+            </span>
+            {% endif %}    
+          </td>
+          <td>
+            <button
+              class="px-4 py-2 text-sm mr-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+            >
+            <a href="{% url 'editarConsum' consumidor.id %}" class="btn btnlist">
+              Editar
+              </a>
+            </button>
+
+            <button
+              class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+            >
+            <a href="{% url 'deletarConsum' consumidor.id %}" class="btn btnlist">
+              Deletar
+              </a>
+            </button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+{% block 'pagination' %}
+  <div class=" align-items-center ">
+    {% if page.has_previous %}
+      <a class="btnpaginator" href="?page={{page.previous_page_number}}">Anterior</a>
+    {% endif %}
+
+    <span class="currenta">{{page.number}}</span> de <span class="currentb">{{page.paginator.num_pages}}</span>
+    
+    {% if page.has_next %}
+      <a class="btnpaginator" href="?page={{page.next_page_number}}">Proxima</a>
+    {% endif %}
+  </div>
+{% endblock %}

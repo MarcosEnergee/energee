@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Relatorio{% endblock %}
+
+{% block 'titulo'%}Arm. Mensal (kwh){% endblock %}
+
+{% block 'user' %}Usuario: {{nome}}{% endblock %}
+
+
+{% block 'dashboard'%}
+<div id="bg-spinner">
+  <div id="position-spinner">
+      <span id="spinner"></span>
+  </div>
+</div>
+
+{% if nivel == 1 %}
+<div class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+>
+  <div class="flex items-center">
+    <a class="text-white-600 mr-4" href="{% url 'geracao' %}"> Geração</a> 
+    <a class="text-white-600 mr-4" href="{% url 'consumo' %}"> Consumo</a>
+    <a class="text-white-600 mr-4" href="{% url 'armazenado_mensal' %}"> Arm. Mensal</a>
+    <a class="text-white-600 mr-4" href="{% url 'injetado' %}"> Injetado</a>
+    <a class="text-white-600 mr-4" href="{% url 'armazenado_total' %}"> Arm. Total</a>
+    <a class="text-white-600 mr-4" href="{% url 'liberar' %}"> Liberar acesso</a>
+  </div>   
+</div>  
+{% endif %}
+
+{% if  distribuidoras %}
+<div class="grid gap-6 mb-8 md:grid-cols-1">
+  <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    <form action="" method="get">
+      {% csrf_token %}
+
+      <label class="block mt-4 text-sm">
+        <select
+          class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+          name="dist" id="dist">
+          <option>Selecione a Distribuidora</option>
+          {% for i in distribuidoras %}
+          <option value="{{i.id}}">{{i.nome}}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <button class="mt-4 px-4 py-2 text-sm mr-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+      >Selecionar
+      </button>
+    </form>
+  </div>
+</div>
+{% endif %}
+
+
+{% if not distribuidoras %}
+<div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+  <div class="w-full overflow-x-auto">
+    <table class="w-full whitespace-no-wrap">
+      <thead>
+        <tr>
+          <th class="text-uppercase th " style="border-right: 1px dashed #883ef2; text-align: center;font-size: 12px; text-align: center; width: 80px;"></th>
+          {% for uc in ucs %}
+          <th class="text-uppercase th " style="border-right: 1px dashed #883ef2; font-size: 12px;text-align: center; width: 80px;">
+              <span class="dark:text-gray-400">{{uc}} </span>
+          </th>
+          {% endfor %}
+        </tr>
+        <tr style="background:#883ef2; ">
+          <th class="text-uppercase th " style="border-right: 1px dashed #883ef2; font-size: 12px;text-align: center; width: 80px; color: #ffffff;font-weight: bold;">Referencia</th>
+          {% for nome in nomes %}
+          <th class="text-uppercase th " style="border-right: 1px dashed #883ef2; font-size: 12px;text-align: center; width: 80px;color: #ffffff;font-weight: bold;">
+            <span>{{nome}} </span>
+          </th>
+          {% endfor %} 
+        </tr>
+      </thead>
+      <!-- <tbody
+        class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+      >
+        {% for gerado in gerados %}
+          <tr class="text-center">
+            <td style="width: 100px;border-right: 1px dashed #883ef2;">
+              <form action="{% url 'editargeracao' gerado|first %}" method="get" style="width: 80px;">
+                <input type="hidden" name="distribuidora" value="{{distribuidora}}">
+                {% csrf_token %}
+                <button type="submit" class="dark:text-gray-400" 
+                style="border: 1px solid;
+                margin: 3px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border-radius: 5px;
+                border-color: #673AB7;"
+                >Editar</button>
+              </form>
+            </td>
+            {% for i in gerado %}
+            <td class="bordaright " style="border-right: 1px dashed #883ef2; width: 80px; ">
+              <div class="f13" style="width: 80px; ">
+                <span class="dark:text-gray-400">{{i}}</span>
+              </div>
+            </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody> -->
+      <tbody>
+        {% for armazenado in armazenados %}
+        <tr class="text-center" style="border-bottom: 1px solid #d5d5d5; ">
+            {% for i in armazenado %}
+            <td style="width: 100px;border-right: 1px dashed #883ef2;">
+              <div class="f13" style="width: 80px; ">
+                <span class="dark:text-gray-400">{{i}}</span>
+              </div>
+            </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+
+
+
+{% block 'pagination' %}
+  <div class=" align-items-center ">
+    {% if page.has_previous %}
+      <a id="btn-previo" class="btnpaginator" href="?page={{page.previous_page_number}}">Anterior</a>
+    {% endif %}
+
+    {% if not distribuidoras %}
+    <span class="currenta">{{page.number}}</span> de <span class="currentb">{{page.paginator.num_pages}}</span>
+    {% endif %}
+
+    {% if page.has_next %}
+      <a id="btn-next" class="btnpaginator" href="?page={{page.next_page_number}}">Proxima</a>
+    {% endif %}
+  </div>
+{% endblock %}

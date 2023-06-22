@@ -1,0 +1,678 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Relatorio{% endblock %}
+
+{% block 'titulo'%}Relatorio{% endblock %}
+
+{% block 'user' %}Usuario: {{nome}}{% endblock %}
+
+
+{% block 'dashboard'%}
+
+
+
+
+{% if nivel == 0 %}
+<div class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+>
+
+<form action="{% url 'valores_consumidor' uc %}" method="get">
+  {% csrf_token %}
+  <input type="hidden" value="{{dist}}" name="dist">
+  <button type="submit" class="btn cadastrar">Consultar Valores</button>
+</form>
+
+</div>  
+{% endif %}
+
+{% if nivel == 1 %}
+<div class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+>
+  <div class="flex items-center">
+    <a class="text-white-600 mr-4" href="{% url 'geracao' %}"> Geração</a> 
+    <a class="text-white-600 mr-4" href="{% url 'consumo' %}"> Consumo</a>
+    <a class="text-white-600 mr-4" href="{% url 'armazenado_mensal' %}"> Arm. Mensal</a>
+    <a class="text-white-600 mr-4" href="{% url 'injetado' %}"> Injetado</a>
+    <a class="text-white-600 mr-4" href="{% url 'armazenado_total' %}"> Arm. Total</a>
+    <a class="text-white-600 mr-4" href="{% url 'liberar' %}"> Liberar acesso</a>
+  </div>   
+</div>  
+{% endif %}
+
+
+{% if status == '2' %}
+<div style="padding: 5px;
+            color: white;
+            text-align: center;
+            background: #E91E63;
+            margin-bottom: 20px;
+            border-radius: 5px;">
+  <p>estao faltando algumas informacoes para esta referencia!</p>
+</div>
+{% endif %}
+
+{% if status == 1 %}
+<div style="padding: 5px;
+            color: white;
+            text-align: center;
+            background: #E91E63;
+            margin-bottom: 20px;
+            border-radius: 5px;">
+  <p>estao faltando algumas informacoes para esta referencia!</p>
+</div>
+{% endif %}
+
+<div id="bg-spinner">
+  <div id="position-spinner">
+      <span id="spinner"></span>
+  </div>
+</div>
+
+{% if update.distribuidora == 1 %}
+  <div class="grid gap-6 mb-8 md:grid-cols-1">
+    <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+      <center>
+        <form action="{% url 'update_armazenados' update.distribuidora %}" method="post">
+            {% csrf_token %}
+            <p class="mb-4 text-gray-700 dark:text-gray-400">Voce precisa atualizar a tabela antes de gerar os relatorios!</p>
+            <button type="submit" class="btn btn-info btn_up " style="background: #673AB7;padding: 7px;border-radius: 5px; color: white;">Atualizar Tabelas Copel</button>
+        </form>
+      </center>
+    </div>
+  </div>
+{% endif %}
+
+{% if update.distribuidora == 2 %}
+<div class="grid gap-6 mb-8 md:grid-cols-1">
+  <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    <center>
+      <form action="{% url 'update_armazenados' update.distribuidora %}" method="post">
+          {% csrf_token %}
+          <p class="mb-4 text-gray-700 dark:text-gray-400">Voce precisa atualizar a tabela antes de gerar os relatorios!</p>
+          <button type="submit" class="btn btn-info btn_up " style="background: #673AB7;padding: 7px;border-radius: 5px; color: white;">Atualizar Tabelas Celesc</button>
+      </form>
+    </center>
+  </div>
+</div>
+{% endif %}
+
+
+{% if not update.distribuidora %}
+{% if update.valor == 0 %}
+{% if dadosgerador != None %}
+<div class="grid gap-6 mb-8 md:grid-cols-1">
+  <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    <form action="" method="get">
+      {% csrf_token %}
+      <!--ADMIN-->
+    {% if nivel == 1  %}
+    <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">  
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">
+        Cliente
+      </span>
+      <select
+        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+        name="cliente" id="cliente">
+        <option>Selecione o Cliente</option>
+        {% for i in clientes %}
+        <option value="{{i.id}}">{{i.nome}}</option>
+        {% endfor %}
+      </select>
+    </label>
+  
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">
+        Distribuidora
+      </span>
+      <select
+        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+        name="dist" id="dist">
+        <option>Selecione a Distribuidora</option>
+      </select>
+    </label>
+
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">
+        Unidade Consumidora
+      </span>
+      <select
+        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+        name="uc" id="uc">
+        <option>Selecione a UC</option>
+      </select>
+    </label>
+
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">
+        Referencia
+      </span>
+      <select
+        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+        name="referencia" id="ref">
+        <option>Selecione a Referencia</option>
+      </select>
+    </label>
+
+    <button class="mt-4 px-4 py-2 text-sm mr-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+    >Filtrar
+    </button>
+    </div>
+    {% endif %}
+    <!--GERADORES-->
+    {% if nivel == 0  %}
+    <label class="block text-sm mt-4">
+      <span class="text-gray-700 dark:text-gray-400">Unidade Consumidora: </span>
+      <input
+        class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+        type="text" disabled value="{{uc}}"
+      />
+    </label>
+
+    <label class="block text-sm mt-4">
+      <span class="text-gray-700 dark:text-gray-400">Distribuidora: </span>
+      {% for i in nomeDist %}
+      <input
+        class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+        type="text" disabled value="{{i.nome}}"
+      />
+      {% endfor %}
+    </label>
+
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">
+        Referencia
+      </span>
+      <select
+        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+        name="referencia" id="ref">
+        <option>Selecione a Referencia</option>
+          {% for i in ref %}
+          <option value="{{i}}">{{i}}</option>
+          {% endfor %}
+      </select>
+    </label>
+
+    <button class="mt-4 px-4 py-2 text-sm mr-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+    >Filtrar
+    </button>
+    {% endif %}
+    
+    </form>
+  </div>
+</div>
+{% endif %}
+{% endif %}
+
+{% if update.valor == 0 %}
+<div class="grid gap-6 mb-8 md:grid-cols-2">
+  {% if dadosgerador == None %}
+  <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    <form action="" method="get">
+      {% csrf_token %}
+      <!--ADMIN-->
+    {% if nivel == 1  %}
+    <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">  
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">
+        Cliente
+      </span>
+      <select
+        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+        name="cliente" id="cliente">
+        <option>Selecione o Cliente</option>
+        {% for i in clientes %}
+        <option value="{{i.id}}">{{i.nome}}</option>
+        {% endfor %}
+      </select>
+    </label>
+  
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">
+        Distribuidora
+      </span>
+      <select
+        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+        name="dist" id="dist">
+        <option>Selecione a Distribuidora</option>
+      </select>
+    </label>
+
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">
+        Unidade Consumidora
+      </span>
+      <select
+        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+        name="uc" id="uc">
+        <option>Selecione a UC</option>
+      </select>
+    </label>
+
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">
+        Referencia
+      </span>
+      <select
+        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+        name="referencia" id="ref">
+        <option>Selecione a Referencia</option>
+      </select>
+    </label>
+
+    <button class="mt-4 px-4 py-2 text-sm mr-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+    >Filtrar
+    </button>
+    </div>
+    {% endif %}
+    <!--GERADORES-->
+    {% if nivel == 0  %}
+    <label class="block text-sm mt-4">
+      <span class="text-gray-700 dark:text-gray-400">Unidade Consumidora: </span>
+      <input
+        class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+        type="text" disabled value="{{uc}}"
+      />
+    </label>
+
+    <label class="block text-sm mt-4">
+      <span class="text-gray-700 dark:text-gray-400">Distribuidora: </span>
+      {% for i in nomeDist %}
+      <input
+        class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+        type="text" disabled value="{{i.nome}}"
+      />
+      {% endfor %}
+    </label>
+
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">
+        Referencia
+      </span>
+      <select
+        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+        name="referencia" id="ref">
+        <option>Selecione a Referencia</option>
+          {% for i in ref %}
+          <option value="{{i}}">{{i}}</option>
+          {% endfor %}
+      </select>
+    </label>
+
+    <button class="mt-4 px-4 py-2 text-sm mr-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+    >Filtrar
+    </button>
+    {% endif %}
+    
+    </form>
+  </div>
+  <div  class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" >
+    <h4 class="mb-4 text-center mt-6 font-semibold text-gray-800 dark:text-gray-300">
+      Preencha os campos para gerar o relatorio!
+    </h4>
+  </div>
+  {% endif %}
+  
+  <!----------com dados-------------->
+
+  {% if dadosgerador != None %}
+  <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    <div class="text-center tit mt-4">
+      <span class="dark:text-gray-200">Dados da Conta</span>
+    </div>
+    <div class="sep">
+      <span class="n dark:text-gray-200">UC:</span> <span class="dark:text-gray-200">{{dadosgerador.uc}}</span>  
+    </div>
+    <div class="sep">
+      <span class="n dark:text-gray-200">Nome:</span> <span class="dark:text-gray-200">{{dadosgerador.nome}}</span>
+    </div>
+    <div class="sep">
+      <span class="n dark:text-gray-200">Referencia:</span> <span class="dark:text-gray-200">{{dadosgerador.referencia}}</span>
+    </div>
+
+    <div class="sep">
+      <span class="n dark:text-gray-200">Valor da Fatura:</span> <span class="dark:text-gray-200">{{dadosgerador.fatura}}</span>
+    </div>
+  
+    {% if dadosgerador.geracaoFP %}
+    <div class="sep">
+      <span class="n dark:text-gray-200">Geracao do mes PT:</span> <span class="dark:text-gray-200">{{dadosgerador.geracaoPT}} Kwh</span>
+    </div>
+    <div class="sep">
+      <span class="n dark:text-gray-200">Geracao do mes FP:</span> <span class="dark:text-gray-200">{{dadosgerador.geracaoFP}} Kwh</span>
+    </div>
+    <div class="sep">
+      <span class="n dark:text-gray-200">Consumo do mesPT:</span> <span class="dark:text-gray-200">{{dadosgerador.consumoPT}} Kwh</span>
+    </div>
+    <div class="sep">
+      <span class="n dark:text-gray-200">Consumo do mes FP:</span> <span class="dark:text-gray-200">{{dadosgerador.consumoFP}} Kwh</span>
+    </div>
+    {% endif %}
+  
+    {% if not dadosgerador.geracaoFP %}
+    <div class="sep">
+    <span class="n dark:text-gray-200">Geracao do mes:</span> <span class="dark:text-gray-200">{{dadosgerador.geracao}} Kwh</span>
+    </div>
+    <div class="sep">
+    <span class="n dark:text-gray-200">Consumo do mes:</span> <span class="dark:text-gray-200">{{dadosgerador.consumo}} Kwh</span>
+    </div>
+    {% endif %}
+  
+    <div class="sep">
+    <span class="n dark:text-gray-200">Injetado do mes:</span> <span class="dark:text-gray-200">{{dadosgerador.injetada}} Kwh</span>
+    </div>
+    <div class="sep">
+    <span class="n dark:text-gray-200">Acumulado na UCG:</span> <span class="dark:text-gray-200">{{dadosgerador.acumulado}} Kwh</span>
+    </div>
+
+    <div class="text-center tit mt-4">
+      <span>Armazenado no Cliente</span>
+    </div>
+    <div class="sep">
+    <span class="n dark:text-gray-200">Armazenado Mensal:</span> <span class="dark:text-gray-200">{{dadosgerador.ArmazenadoMensal}} Kwh</span>
+    </div>
+    <div class="sep">
+    <span class="n dark:text-gray-200">Armazenado Total:</span> <span class="dark:text-gray-200">{{dadosgerador.ArmazenadoTotal}} Kwh</span>
+    </div>
+    <div class="text-center tit mt-4">
+      <span>Compensado Cliente</span>
+    </div>
+    <div class="sep">
+    <span class="n dark:text-gray-200">Compensado Mes:</span> <span class="dark:text-gray-200">{{dadosgerador.CompensadoMes}} Kwh</span>
+    </div>
+    
+    <div class="text-center tit mt-4">
+      <span>Liquidação Financeira</span>
+    </div>
+    <div class="sep">
+    <span class="n dark:text-gray-200">Valor Bruto:</span> <span class="dark:text-gray-200">R$ {{dadosgerador.valorBruto}} - <span class="unt">{{dadosgerador.UnitBruto}} R$/kwh</span></span>
+    </div>
+    {% if dadosgerador.geracaoFP%}
+    <div class="sep">
+      <span class="n dark:text-gray-200">Desconto da Fatura:</span> <span class=" dark:text-gray-200">R$ {{dadosgerador.faturaGerador}} - <span class="unt">{{dadosgerador.UnitFatura}} R$/kwh</span></span>
+    </div>
+    {% endif %}
+    <div class="sep">
+      <span class="n dark:text-gray-200">Desconto do Cliente:</span> <span class=" dark:text-gray-200">R$ {{dadosgerador.descontoCliente}} - <span class="unt">{{dadosgerador.UnitCliente}} R$/kwh</span></span>
+      </div>
+      <div class="sep">
+        <span class="n dark:text-gray-200">Desconto do  Gestão:</span> <span class=" dark:text-gray-200">R$ {{dadosgerador.descontoGestao}} - <span class="unt">{{dadosgerador.UnitGestao}} R$/kwh</span></span>
+      </div>
+      {% if not dadosgerador.geracaoFP%}
+      <div class="sep">
+        <span class="n dark:text-gray-200">Desconto da Fatura:</span> <span class=" dark:text-gray-200">R$ {{dadosgerador.faturaGerador}} - <span class="unt">{{dadosgerador.UnitFatura}} R$/kwh</span></span>
+      </div>
+      {% endif %}
+      <div class="sep">
+        <span class="n dark:text-gray-200">Impostos Descontados:</span> <span class=" dark:text-gray-200">R$ {{dadosgerador.descontoImposto}}</span>
+      </div>
+      <div class="sep">
+        <span class="n dark:text-gray-200">Valor Final:</span> <span class=" dark:text-gray-200">R$ {{dadosgerador.ValorFinal}}</span>
+      </div>
+  </div>
+  <div  class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    <h4 class="mb-4 text-center mt-6 font-semibold text-gray-800 dark:text-gray-300">
+      Grafico ultimos 12 meses
+    </h4>
+    <canvas id="grafico_relatorio"></canvas>
+
+    <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400" 
+    >
+    <div class="flex items-center">
+      <span
+        class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"
+      ></span>
+      <span>Consumo </span>
+    </div>
+    <div class="flex items-center">
+      <span
+        class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"
+      ></span>
+      <span>Geracao </span>
+    </div>
+    </div>
+
+  </div>
+  {% endif %}
+</div>
+{% endif %}
+{% endif %}
+
+<script>
+  function renderiza_grafico_relatorio_celesc(url){
+
+  fetch(url, {
+      method: 'get',
+  }).then(function(result){
+      return result.json()
+  }).then(function(data){
+
+    const lineConfig = {
+  type: 'line',
+  data: {
+    labels: data.labels,
+    datasets: [
+      {
+        label: 'Consumo Celesc',
+        backgroundColor: '#0694a2',
+        borderColor: '#0694a2',
+        data: data.consumo,
+        fill: false,
+      },
+      {
+        label: 'Geracao Celesc',
+        fill: false,
+        backgroundColor: '#7e3af2',
+        borderColor: '#7e3af2',
+        data: data.geracao,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    legend: {
+      display: false,
+    },
+    tooltips: {
+      mode: 'index',
+      intersect: false,
+    },
+    hover: {
+      mode: 'nearest',
+      intersect: true,
+    },
+    scales: {
+      x: {
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Month',
+        },
+      },
+      y: {
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Value',
+        },
+      },
+    },
+  },
+}
+
+// change this to the id of your chart element in HMTL
+const lineCtx = document.getElementById('grafico_relatorio')
+window.myLine = new Chart(lineCtx, lineConfig)
+
+})
+}
+</script>  
+
+<script>
+  function renderiza_grafico_relatorio_copel(url){
+
+  fetch(url, {
+      method: 'get',
+  }).then(function(result){
+      return result.json()
+  }).then(function(data){
+
+    const lineConfig = {
+  type: 'line',
+  data: {
+    labels: data.labels,
+    datasets: [
+      {
+        label: 'Consumo Copel',
+        backgroundColor: '#0694a2',
+        borderColor: '#0694a2',
+        data: data.consumo,
+        fill: false,
+      },
+      {
+        label: 'Geracao Copel',
+        fill: false,
+        backgroundColor: '#7e3af2',
+        borderColor: '#7e3af2',
+        data: data.geracao,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    legend: {
+      display: false,
+    },
+    tooltips: {
+      mode: 'index',
+      intersect: false,
+    },
+    hover: {
+      mode: 'nearest',
+      intersect: true,
+    },
+    scales: {
+      x: {
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Month',
+        },
+      },
+      y: {
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: 'Value',
+        },
+      },
+    },
+  },
+}
+
+// change this to the id of your chart element in HMTL
+const lineCtx = document.getElementById('grafico_relatorio')
+window.myLine = new Chart(lineCtx, lineConfig)
+
+})
+}
+</script>  
+
+{% if nivel == 0 %}
+{% if dadosgerador.geracaoFP%}
+  <script>
+    window.onload = function(e){
+      renderiza_grafico_relatorio_celesc("{% url 'grafico_relatorio_celesc' uc %}")
+  }
+  </script>
+  {% endif %}
+
+  {% if not dadosgerador.geracaoFP%}
+  <script>
+    window.onload = function(e){
+      renderiza_grafico_relatorio_copel("{% url 'grafico_relatorio' uc %}")
+  }
+  </script>
+  {% endif %}
+{% endif %}
+
+{% if nivel == 1 %}
+
+  {% if dadosgerador.geracaoFP%}
+  <script>
+    window.onload = function(e){
+      renderiza_grafico_relatorio_celesc("{% url 'grafico_relatorio_celesc' uc %}")
+  }
+  </script>
+  {% endif %}
+
+  {% if not dadosgerador.geracaoFP%}
+  <script>
+    window.onload = function(e){
+      renderiza_grafico_relatorio_copel("{% url 'grafico_relatorio' uc %}")
+  }
+  </script>
+  {% endif %}
+{% endif %}
+
+<script>
+
+    function alimentaSelect(url){
+        let selectSubcategoria = document.getElementById('uc');
+        let selectRef = document.getElementById('ref');
+        let selectDist = document.getElementById('dist');
+
+        fetch(url, {
+            method: 'get',
+            }).then(function(result){
+                return result.json()
+            }).then(function(data){
+                selectDist.innerHTML = data.distribuidoras ;
+            });
+    }
+ 
+    function alimentaSelectUC(url){
+
+        console.log(url)
+        let selectSubcategoria = document.getElementById('uc');
+        let selectRef = document.getElementById('ref');
+
+        fetch(url, {
+            method: 'get',
+            }).then(function(result){
+                return result.json()
+            }).then(function(data){
+                selectSubcategoria.innerHTML = data.ucs;
+                selectRef.innerHTML = data.refs ;
+            });
+    }
+
+    let selectCliente = document.getElementById('cliente');
+    selectCliente.onchange = () => { 
+
+        let id =  selectCliente.value
+        let name="{% url 'AlimentaSelectDist' 1 %}" 
+                
+        split = name.split('/')
+        url = '/'+split[1]+'/'+split[2]+'/'+id
+
+        alimentaSelect(url)
+    }
+
+    let selectDist = document.getElementById('dist');
+    selectDist.onchange = () => { 
+        
+        let id =  selectDist.value
+        let cli = document.getElementById('cliente').value
+        let name="{% url 'AlimentaSelect' 1 %}" 
+                
+        split = name.split('/')
+        url = '/'+split[1]+'/'+split[2]+'/'+id+'&'+cli
+
+        alimentaSelectUC(url)
+    }
+</script>
+
+{% endblock %}
+
+{% block 'js' %}{% endblock %}

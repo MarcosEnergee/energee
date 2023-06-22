@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Relatorios{% endblock %}
+
+{% block 'titulo'%}
+  <h6 class="text-white text-capitalize ps-3">Consumo Remanescente(kwh)</h6>
+{% endblock %}
+
+{% block 'botao'%}
+<a id="btn-g" class="btn cadastrar" href="{% url 'geracao' %}">Geração</a>
+<a id="btn-c" class="btn cadastrar" href="{% url 'consumo' %}">Consumo</a>
+<a id="btn-i" class="btn cadastrar" href="{% url 'injetado' %}">Injetado</a>
+<a id="btn-m" class="btn cadastrar"  href="{% url 'armazenado_mensal' %}">Arm. Mensal</a>
+<a id="btn-t" class="btn cadastrar" href="{% url 'armazenado_total' %}">Arm. Total</a>
+<a id="btn-r"  class="btn cadastrar" href="{% url 'remanescente' %}">Remanescente</a>
+<a id="btn-x" class="btn cadastrar" href="{% url 'check' %}">Check</a>
+{% endblock %}
+
+{% block 'dashboard'%}
+<div id="bg-spinner">
+  <div id="position-spinner">
+      <span id="spinner"></span>
+  </div>
+</div>
+
+<table class="table align-items-center mb-0">
+  <thead>
+    <tr>
+      <th class="text-uppercase th tcenter">Referencia</th>
+      <th class="text-uppercase th tcenter">Total Remanescente</th>
+      <th class="text-uppercase th tcenter">Remanesc. > 100</th>
+      <th class="text-uppercase th tcenter">Diferenca</th>
+      <th class="text-uppercase th tcenter">% Compensação</th>
+      <th class="text-uppercase th tcenter">Ofensa c/ Consumo <</th>
+      <th class="text-uppercase th tcenter">Ofensa c/ Consumo ></th>
+      <th class="text-uppercase th tcenter">% Armazenamento</th>
+      {% for uc in ucs %}
+      <th class="text-uppercase th ">
+          {{uc}}
+      </th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in remanescente %}
+    <tr>
+      {% for v in i %}
+      <td class="bordaright tamanhotd">
+        <div class="f13">
+          {{v}} 
+        </div>
+      </td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+
+{% block 'pagination' %}
+  <div class=" align-items-center ">
+    {% if page.has_previous %}
+      <a id="btn-previo" class="btnpaginator" href="?page={{page.previous_page_number}}">Anterior</a>
+    {% endif %}
+
+    <span class="currenta">{{page.number}}</span> de <span class="currentb">{{page.paginator.num_pages}}</span>
+    
+    {% if page.has_next %}
+      <a id="btn-next" class="btnpaginator" href="?page={{page.next_page_number}}">Proxima</a>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block 'title'%}Geradores{% endblock %}
+
+{% block 'titulo'%}Editar Gerador{% endblock %}
+
+{% block 'user' %}Usuario: {{nome}}{% endblock %}
+
+{% block 'dashboard'%}
+
+  
+  <div class="grid gap-6 mb-8 md:grid-cols-1">
+    <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+      <form action="{% url 'updateGerador_gerador' gerador.id %}" method="post">
+        {% csrf_token %}
+        
+      <label class="block mt-4 text-sm">
+        <span class="text-gray-700 dark:text-gray-400">Nome</span>
+        <input
+          class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+          name="nome" value="{{ gerador.nome }}"
+        />
+      </label>
+      <label class="block mt-4 text-sm">
+        <span class="text-gray-700 dark:text-gray-400">Nome</span>
+        <input
+          class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+          type="password" name="senha" value="****"
+        />
+      </label>
+      <button class="mt-4 px-4 py-2 text-sm mr-4 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+      >Salvar
+      </button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
