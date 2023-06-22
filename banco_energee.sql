@@ -33,7 +33,7 @@ INSERT INTO `Clientes_clientes` (`id`, `nome`, `end`, `fone`, `status`) VALUES
 -- Despejando dados para a tabela `distribuidoras_distribuidoras`
 --
 
-INSERT INTO `Distribuidoras_distribuidoras` (`id`, `nome`, `status`, `cliente_id`) VALUES
+INSERT INTO `distribuidoras_distribuidoras` (`id`, `nome`, `status`, `cliente_id`) VALUES
 (1, 'Copel', 1, 1),
 (2, 'Celesc', 1, 1);
 
