@@ -9,5 +9,8 @@ class Administradores(models.Model):
     senha = models.CharField(max_length=100)
     uc = models.CharField(max_length=50)
 
+    class Meta:
+        db_table = 'administradores_administradores'
+
     def __str__(self) -> str:
         return self.nome
