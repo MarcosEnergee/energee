@@ -647,7 +647,7 @@ INSERT INTO `Consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id
 -- Despejando dados para a tabela `relatorios_armazenamentomensal`
 --
 
-INSERT INTO `relatorios_ArmazenamentoMensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `relatorios_Armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (45905, '103710124', '072019', '0', 1, 1, 1),
 (45906, '103710124', '082019', '0', 1, 1, 1),
 (45907, '103710124', '092019', '0', 1, 1, 1),
