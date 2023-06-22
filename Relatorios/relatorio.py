@@ -4525,7 +4525,7 @@ class Relatorio:
     
     def SelecionaHistorico(self,ref, uc=None):
         dic = {} 
-        query = ' SELECT * FROM relatorios_historico '
+        query = ' SELECT * FROM Relatorios_historico '
 
         if uc != None: 
             query += f' WHERE Referencia= {ref}'
