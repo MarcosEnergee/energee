@@ -13,7 +13,7 @@ class Geradores(models.Model):
     senha = models.CharField(max_length=100)
 
     class Meta:
-        db_table = 'geradores_geradores'
+        db_table = 'Geradores_geradores'
     
     def __str__(self) -> str:
         return self.nome
