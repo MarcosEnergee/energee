@@ -4370,7 +4370,7 @@ INSERT INTO `Relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Ante
 -- Despejando dados para a tabela `relatorios_gerador_celesc`
 --
 
-INSERT INTO `Rlatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
+INSERT INTO `Relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
 (6, '48966365', '45.63', '072018', '0', '0', '20552', '0', '0', '0', '0', '0', '0', '20552', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (7, '48966365', '45.05', '082018', '0', '0', '63867', '0', '0', '0', '0', '0', '0', '84419', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (8, '48966365', '49.3', '092018', '0', '0', '38020', '0', '0', '0', '0', '0', '0', '84939', 1, 0, 1, 1, 2, 0, '0', 13, 20),
