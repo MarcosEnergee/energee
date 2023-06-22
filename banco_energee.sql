@@ -647,7 +647,7 @@ INSERT INTO `Consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id
 -- Despejando dados para a tabela `relatorios_armazenamentomensal`
 --
 
-INSERT INTO `relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `relatorios_ArmazenamentoMensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (45905, '103710124', '072019', '0', 1, 1, 1),
 (45906, '103710124', '082019', '0', 1, 1, 1),
 (45907, '103710124', '092019', '0', 1, 1, 1),
@@ -1733,7 +1733,7 @@ INSERT INTO `relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`,
 (48490, ' 21909386 ', ' 062022 ', ' 22 ', 1, 2, 1),
 (48491, ' 21909386 ', ' 072022 ', ' 315 ', 1, 2, 1),
 (48492, ' 21909386 ', ' 082022 ', ' -40 ', 1, 2, 1);
-INSERT INTO `relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `relatorios_ArmazenamentoMensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (48493, ' 21909386 ', ' 092022 ', ' 501 ', 1, 2, 1),
 (48494, ' 21909386 ', ' 102022 ', ' 189 ', 1, 2, 1),
 (48495, ' 21909386 ', ' 112022 ', ' -605 ', 1, 2, 1),
@@ -1987,7 +1987,7 @@ INSERT INTO `relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`,
 -- Despejando dados para a tabela `relatorios_armazenamentototal`
 --
 
-INSERT INTO `relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `relatorios_ArmazenamentoTotal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (46273, '103710124', '072019', '0', 1, 1, 1),
 (46274, '103710124', '082019', '0', 1, 1, 1),
 (46275, '103710124', '092019', '0', 1, 1, 1),
@@ -3068,7 +3068,7 @@ INSERT INTO `relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, 
 (48853, ' 53903541 ', ' 072018 ', ' 0 ', 1, 2, 1),
 (48854, ' 53903541 ', ' 082018 ', ' 0 ', 1, 2, 1),
 (48855, ' 53903541 ', ' 092018 ', ' 0 ', 1, 2, 1);
-INSERT INTO `relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `relatorios_ArmazenamentoTotal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (48856, ' 53903541 ', ' 102018 ', ' 0 ', 1, 2, 1),
 (48857, ' 53903541 ', ' 112018 ', ' 0 ', 1, 2, 1),
 (48858, ' 53903541 ', ' 122018 ', ' 0 ', 1, 2, 1),
