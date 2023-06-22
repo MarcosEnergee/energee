@@ -31,6 +31,13 @@ INSERT INTO `Clientes_clientes` (`id`, `nome`, `end`, `fone`, `status`) VALUES
 --
 -- Despejando dados para a tabela `Administradores_administradores`
 --
+--
+-- Despejando dados para a tabela `Distribuidoras_distribuidoras`
+--
+
+INSERT INTO `Distribuidoras_distribuidoras` (`id`, `nome`, `status`, `cliente_id`) VALUES
+(1, 'Copel', 1, 1),
+(2, 'Celesc', 1, 1);
 
 INSERT INTO `Administradores_administradores` (`id`, `nome`, `end`, `fone`, `distribuidora_id`, `senha`, `uc`) VALUES
 (1, 'Marcos', 'end ficticio tv.44', '897577899', 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', '84683481000177'),
@@ -585,13 +592,7 @@ INSERT INTO `Consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id
 
 -- --------------------------------------------------------
 
---
--- Despejando dados para a tabela `Distribuidoras_distribuidoras`
---
 
-INSERT INTO `Distribuidoras_distribuidoras` (`id`, `nome`, `status`, `cliente_id`) VALUES
-(1, 'Copel', 1, 1),
-(2, 'Celesc', 1, 1);
 
 -- --------------------------------------------------------
 
