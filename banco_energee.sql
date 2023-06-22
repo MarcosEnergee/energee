@@ -60,6 +60,39 @@ INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `userna
 -- --------------------------------------------------------
 
 
+-- Despejando dados para a tabela `geradores_geradores`
+--
+
+INSERT INTO `geradores_geradores` (`id`, `nome`, `uc`, `status`, `distribuidora_id`, `admin_id`, `cliente_id`, `senha`) VALUES
+(4, 'KHOLER 1', '103710124', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(6, 'KHOLER 2', '9198750', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(18, 'KASPER', '11151617', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(19, '96070900', '96070900', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(22, 'MWM', '48966365', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(23, 'Scania', '52537266', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(24, 'Solar 1', '31172756', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(25, 'Solar 2', '42944114', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(26, 'Solar 3', '21909386', 1, 2, 1, 1, '69bf0bc46f51b33377c4f3d92caf876714f6bbbe99e7544487327920873f9820'),
+(27, 'Jaciel', '53903541', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(28, 'Edson', '41973722', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(29, 'Vilmar', '52496373', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(30, 'Felipe Mott', '32205151', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(31, '9057617', '9057617', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(32, 'ROGERIO', '9791329', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(33, 'NETTSON', '11677058', 1, 1, 1, 1, '69bf0bc46f51b33377c4f3d92caf876714f6bbbe99e7544487327920873f9820'),
+(34, 'FRANCISCO', '99884771', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(35, 'BONATTO', '80299296', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(36, 'DOUGLAS', '9790799', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(37, 'CASSOL', '108983536', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(38, 'THALES', '106473085', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(39, 'EDUARDO', '108570010', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(40, 'AND. 1', '109869079', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(41, 'AND. 2', '109869630', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(42, 'PAULO', '109876830', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
+(43, 'DALTON', '109852621', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
+
+-- --------------------------------------------------------
+
 
 -- --------------------------------------------------------
 
@@ -608,267 +641,6 @@ INSERT INTO `Consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id
 
 --
 
--- --------------------------------------------------------
-
--- Despejando dados para a tabela `django_admin_log`
---
-
-INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`, `action_flag`, `change_message`, `content_type_id`, `user_id`) VALUES
-(1, '2023-03-14 17:29:12.615159', '43', 'DALTON', 2, '[{\"changed\": {\"fields\": [\"Admin\"]}}]', 7, 1),
-(2, '2023-03-14 23:16:39.467657', '46', 'teste novo', 3, '', 7, 1),
-(3, '2023-03-14 23:16:46.019719', '45', 'teste agora', 3, '', 7, 1),
-(4, '2023-03-14 23:16:51.259459', '44', 'teste', 3, '', 7, 1),
-(5, '2023-03-16 12:59:54.005349', '47', 'teste', 3, '', 7, 1),
-(6, '2023-03-18 13:59:12.801491', '43', 'DALTON', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(7, '2023-03-18 13:59:26.201314', '42', 'PAULO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(8, '2023-03-18 13:59:37.585466', '41', 'AND. 2', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(9, '2023-03-18 13:59:47.841251', '40', 'AND. 1', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(10, '2023-03-18 14:00:04.057528', '39', 'EDUARDO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(11, '2023-03-18 14:00:14.945044', '38', 'THALES', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(12, '2023-03-18 14:00:24.176947', '37', 'CASSOL', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(13, '2023-03-18 14:00:34.016737', '36', 'DOUGLAS', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(14, '2023-03-18 14:00:43.888701', '35', 'BONATTO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(15, '2023-03-18 14:00:53.624779', '34', 'FRANCISCO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(16, '2023-03-18 14:01:03.920883', '33', 'NETTSON', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(17, '2023-03-18 14:01:14.992618', '32', 'ROGERIO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(18, '2023-03-18 14:01:26.320471', '32', 'ROGERIO', 2, '[]', 7, 1),
-(19, '2023-03-18 14:01:36.568170', '31', 'ROSSETO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(20, '2023-03-18 14:01:48.796051', '30', 'Felipe Mott', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(21, '2023-03-18 14:01:58.680347', '29', 'Vilmar', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(22, '2023-03-18 14:02:05.377266', '28', 'Edson', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(23, '2023-03-18 14:02:12.272813', '27', 'Jaciel', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(24, '2023-03-18 14:02:20.352313', '26', 'Solar 3', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(25, '2023-03-18 14:02:28.960128', '25', 'Solar 2', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(26, '2023-03-18 14:02:36.232479', '24', 'Solar 1', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(27, '2023-03-18 14:02:43.304208', '23', 'Scania', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(28, '2023-03-18 14:02:50.679975', '22', 'MWM', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(29, '2023-03-18 14:02:57.712795', '19', 'JAIR', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(30, '2023-03-18 14:03:03.935855', '18', 'KASPER', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(31, '2023-03-18 14:03:10.615828', '6', 'KHOLER 2', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(32, '2023-03-18 14:03:17.796882', '4', 'KHOLER 1', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1);
-
--- --------------------------------------------------------
-
---
--- Despejando dados para a tabela `django_content_type`
---
-
-INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
-(1, 'admin', 'logentry'),
-(10, 'Administradores', 'administradores'),
-(3, 'auth', 'group'),
-(2, 'auth', 'permission'),
-(4, 'auth', 'user'),
-(17, 'Clientes', 'clientes'),
-(8, 'Consumidores', 'consumidores'),
-(5, 'contenttypes', 'contenttype'),
-(9, 'Distribuidoras', 'distribuidoras'),
-(16, 'Extracao', 'document'),
-(7, 'Geradores', 'geradores'),
-(15, 'Relatorios', 'armazenamentomensal'),
-(14, 'Relatorios', 'armazenamentototal'),
-(13, 'Relatorios', 'azul'),
-(20, 'Relatorios', 'azul_celesc'),
-(12, 'Relatorios', 'consumidor'),
-(18, 'Relatorios', 'consumidor_celesc'),
-(11, 'Relatorios', 'gerador'),
-(19, 'Relatorios', 'gerador_celesc'),
-(21, 'Relatorios', 'historico'),
-(6, 'sessions', 'session');
-
--- --------------------------------------------------------
-
-
---
--- Despejando dados para a tabela `django_migrations`
---
-
-INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
-(1, 'Distribuidoras', '0001_initial', '2023-02-04 17:55:49.164676'),
-(2, 'Administradores', '0001_initial', '2023-02-04 17:55:49.459844'),
-(3, 'Clientes', '0001_initial', '2023-02-04 17:55:49.599228'),
-(4, 'Clientes', '0002_clientes_status', '2023-02-04 17:55:49.639871'),
-(5, 'Geradores', '0001_initial', '2023-02-04 17:55:49.694032'),
-(6, 'Geradores', '0002_geradores_distribuidora', '2023-02-04 17:55:49.790021'),
-(7, 'Geradores', '0003_geradores_admin', '2023-02-04 17:55:49.942188'),
-(8, 'Geradores', '0004_geradores_descontocliente_geradores_descontogestao', '2023-02-04 17:55:50.036133'),
-(9, 'Geradores', '0005_geradores_cliente', '2023-02-04 17:55:50.124123'),
-(10, 'Consumidores', '0001_initial', '2023-02-04 17:55:50.447427'),
-(11, 'Extracao', '0001_initial', '2023-02-04 17:55:50.477733'),
-(12, 'Extracao', '0002_rename_documentconsumidor_document', '2023-02-04 17:55:50.533725'),
-(13, 'Relatorios', '0001_initial', '2023-02-04 17:55:51.471651'),
-(14, 'Relatorios', '0002_armazenamentomensal', '2023-02-04 17:55:51.611328'),
-(15, 'contenttypes', '0001_initial', '2023-02-04 17:55:51.680193'),
-(16, 'auth', '0001_initial', '2023-02-04 17:55:52.507040'),
-(17, 'admin', '0001_initial', '2023-02-04 17:55:52.705962'),
-(18, 'admin', '0002_logentry_remove_auto_add', '2023-02-04 17:55:52.752563'),
-(19, 'admin', '0003_logentry_add_action_flag_choices', '2023-02-04 17:55:52.808548'),
-(20, 'contenttypes', '0002_remove_content_type_name', '2023-02-04 17:55:53.193016'),
-(21, 'auth', '0002_alter_permission_name_max_length', '2023-02-04 17:55:53.326356'),
-(22, 'auth', '0003_alter_user_email_max_length', '2023-02-04 17:55:53.460951'),
-(23, 'auth', '0004_alter_user_username_opts', '2023-02-04 17:55:53.492951'),
-(24, 'auth', '0005_alter_user_last_login_null', '2023-02-04 17:55:53.604938'),
-(25, 'auth', '0006_require_contenttypes_0002', '2023-02-04 17:55:53.620936'),
-(26, 'auth', '0007_alter_validators_add_error_messages', '2023-02-04 17:55:53.700930'),
-(27, 'auth', '0008_alter_user_username_max_length', '2023-02-04 17:55:53.780920'),
-(28, 'auth', '0009_alter_user_last_name_max_length', '2023-02-04 17:55:53.836918'),
-(29, 'auth', '0010_alter_group_name_max_length', '2023-02-04 17:55:53.948905'),
-(30, 'auth', '0011_update_proxy_permissions', '2023-02-04 17:55:54.020899'),
-(31, 'auth', '0012_alter_user_first_name_max_length', '2023-02-04 17:55:54.077099'),
-(32, 'sessions', '0001_initial', '2023-02-04 17:55:54.149093'),
-(33, 'Relatorios', '0003_gerador_cliente', '2023-02-04 23:30:40.013225'),
-(34, 'Relatorios', '0004_azul_cliente', '2023-02-05 00:07:01.283832'),
-(35, 'Relatorios', '0005_consumidor_cliente', '2023-02-05 00:07:02.350536'),
-(36, 'Relatorios', '0006_armazenamentomensal_cliente_and_more', '2023-02-08 13:28:05.511890'),
-(37, 'Relatorios', '0007_consumidor_update', '2023-02-09 21:30:17.674515'),
-(38, 'Relatorios', '0008_rename_update_consumidor_up', '2023-02-09 22:15:50.617485'),
-(39, 'Relatorios', '0009_remove_consumidor_up_gerador_up', '2023-02-09 23:26:29.045061'),
-(40, 'Relatorios', '0010_consumidor_celesc', '2023-02-23 01:16:50.032076'),
-(41, 'Relatorios', '0011_gerador_celesc', '2023-02-23 01:54:07.784548'),
-(42, 'Clientes', '0003_remove_clientes_distribuidora', '2023-02-23 22:01:42.512763'),
-(43, 'Distribuidoras', '0002_distribuidoras_cliente', '2023-02-23 22:01:42.948507'),
-(44, 'Relatorios', '0012_azul_celesc', '2023-02-26 22:01:13.769429'),
-(45, 'Geradores', '0006_geradores_senha', '2023-03-14 15:15:20.985839'),
-(46, 'Geradores', '0007_alter_geradores_senha', '2023-03-14 23:16:24.158492'),
-(47, 'Administradores', '0002_administradores_senha', '2023-03-15 14:04:30.656081'),
-(48, 'Administradores', '0003_administradores_uc', '2023-03-15 14:16:17.335315'),
-(49, 'Relatorios', '0002_gerador_liberado', '2023-03-20 17:24:48.777498'),
-(50, 'Relatorios', '0003_gerador_celesc_liberado', '2023-03-22 14:59:06.968856'),
-(51, 'Relatorios', '0004_gerador_imposto_gerador_celesc_imposto', '2023-06-06 04:09:36.930051'),
-(52, 'Relatorios', '0005_gerador_descontocliente_gerador_descontogestao_and_more', '2023-06-06 04:21:36.407444'),
-(53, 'Geradores', '0008_remove_geradores_descontocliente_and_more', '2023-06-06 15:24:45.374840'),
-(54, 'Relatorios', '0006_alter_gerador_descontocliente_and_more', '2023-06-06 15:24:45.550363'),
-(55, 'Relatorios', '0007_alter_gerador_imposto_alter_gerador_celesc_imposto', '2023-06-08 21:03:00.374533'),
-(56, 'Relatorios', '0008_alter_gerador_imposto_alter_gerador_celesc_imposto', '2023-06-08 21:05:32.803192'),
-(58, 'Relatorios', '0009_historico', '2023-06-18 21:54:43.646617');
-
--- --------------------------------------------------------
-
---
--- Despejando dados para a tabela `django_session`
---
-
-INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('678n6vj6xi7k4gdus1eklwjpdirp3j7e', 'eyJ1c3VhcmlvQWRtaW4iOjEsInVjIjoiODQ2ODM0ODEwMDAxNzciLCJub21lIjoiTWFyY29zIn0:1ppYIz:X7FuLnvvdecFPepEWj1e_T9UYnGjeXBrrJrOP0Fq3uI', '2023-05-04 17:42:49.775294'),
-('gkyeqfr0dv014vlw649mdnfsabta8yfx', 'eyJ1c3VhcmlvQWRtaW4iOjEsInVjIjoiODQ2ODM0ODEwMDAxNzciLCJub21lIjoiTWFyY29zIn0:1pezoy:T4oZrk8SLVyZgIVh_lD-aZs03MwUZ3CA5N5ufQ5ntzU', '2023-04-05 14:52:12.536204'),
-('l9nt7mst9mmrk3xdo6xmmyr8lot7l138', 'eyJ1c3VhcmlvQWRtaW4iOjEsInVjIjoiODQ2ODM0ODEwMDAxNzciLCJub21lIjoiTWFyY29zIn0:1qC6N8:L0Gi9KXliGfxAVwE9TDmyqlTKSdYDAlOgY297OSi_OE', '2023-07-05 22:32:18.426051'),
-('x3nknkx3geecmddsp5wbdqfn875mla53', 'eyJ1c3VhcmlvQWRtaW4iOjEsInVjIjoiODQ2ODM0ODEwMDAxNzciLCJub21lIjoiTWFyY29zIn0:1qAejA:5R_069lhwDy3Up3svsb1Jk-Ita-L5CGabBgnxHYaArs', '2023-07-01 22:49:04.034345');
-
--- --------------------------------------------------------
-
---
--- Despejando dados para a tabela `extracao_document`
---
-
-INSERT INTO `extracao_document` (`id`, `uploadedFile`) VALUES
-(206, 'Upload Files/DemonstrativoMicroMiniGeracao.pdf'),
-(207, 'Upload Files/106473085.pdf'),
-(208, 'Upload Files/106473085.pdf'),
-(209, 'Upload Files/DemonstrativoMicroMiniGeracao_1.pdf'),
-(210, 'Upload Files/DemonstrativoMicroMiniGeracao_1.pdf'),
-(211, 'Upload Files/DemonstrativoMicroMiniGeracao.pdf'),
-(212, 'Upload Files/AG_0335_1.pdf'),
-(213, 'Upload Files/03.2023_-_53903541.pdf'),
-(214, 'Upload Files/03.2023_-_53903541.pdf'),
-(215, 'Upload Files/03.2023_-_52537266.pdf'),
-(216, 'Upload Files/03.2023_1.pdf'),
-(217, 'Upload Files/03.2023_-_48966365.pdf'),
-(218, 'Upload Files/03.2023_-_41973722.pdf'),
-(219, 'Upload Files/03.2023_2.pdf'),
-(220, 'Upload Files/03.2023_-_32205151.pdf'),
-(221, 'Upload Files/03.2023.pdf'),
-(222, 'Upload Files/AGP-032023-2735-00016205990-050420231934.pdf'),
-(223, 'Upload Files/03.2023_-_109876830.pdf'),
-(224, 'Upload Files/03.2023_-_109876830.pdf'),
-(225, 'Upload Files/03.2023_-_109869630.pdf'),
-(226, 'Upload Files/03.2023_-_109869079.pdf'),
-(227, 'Upload Files/03.23_-_109852621.pdf'),
-(228, 'Upload Files/03.2023_-_108983536.pdf'),
-(229, 'Upload Files/03.23_-_108570010.pdf'),
-(230, 'Upload Files/03.2023_-_106473085.pdf'),
-(231, 'Upload Files/03.2023_-_103710124.pdf'),
-(232, 'Upload Files/03.2023_-_99884771.pdf'),
-(233, 'Upload Files/03.2023_-_96070900.pdf'),
-(234, 'Upload Files/03.2023_-_11677058.pdf'),
-(235, 'Upload Files/03.2023_-_80299296.pdf'),
-(236, 'Upload Files/03.2023_-_11151617.pdf'),
-(237, 'Upload Files/03.2023_-_9791329.pdf'),
-(238, 'Upload Files/03.2023_-_9790799.pdf'),
-(239, 'Upload Files/03.2023_-_9057617.pdf'),
-(240, 'Upload Files/03.2023_-_9198750.pdf'),
-(241, 'Upload Files/21909386.pdf'),
-(242, 'Upload Files/21909386.pdf'),
-(243, 'Upload Files/21909386.pdf'),
-(244, 'Upload Files/21909386.pdf'),
-(245, 'Upload Files/21909386.pdf'),
-(246, 'Upload Files/21909386.pdf'),
-(247, 'Upload Files/21909386_d5SJGul.pdf'),
-(248, 'Upload Files/31172756.pdf'),
-(249, 'Upload Files/42944114.pdf'),
-(250, 'Upload Files/52537266.pdf'),
-(251, 'Upload Files/53903541.pdf'),
-(252, 'Upload Files/55524114.pdf'),
-(253, 'Upload Files/52537266.pdf'),
-(254, 'Upload Files/52537266.pdf'),
-(255, 'Upload Files/52537266.pdf'),
-(256, 'Upload Files/52537266.pdf'),
-(257, 'Upload Files/52537266.pdf'),
-(258, 'Upload Files/53903541.pdf'),
-(259, 'Upload Files/53903541.pdf'),
-(260, 'Upload Files/53903541.pdf'),
-(261, 'Upload Files/53903541.pdf'),
-(262, 'Upload Files/53903541.pdf'),
-(263, 'Upload Files/53903541.pdf'),
-(264, 'Upload Files/53903541.pdf'),
-(265, 'Upload Files/53903541.pdf'),
-(266, 'Upload Files/52537266.pdf'),
-(267, 'Upload Files/52537266.pdf'),
-(268, 'Upload Files/52537266.pdf'),
-(269, 'Upload Files/AG_0335.pdf'),
-(270, 'Upload Files/05.2023_-_41973722.pdf'),
-(271, 'Upload Files/AG_0335.pdf'),
-(272, 'Upload Files/AG_0335_iATkqQA.pdf'),
-(273, 'Upload Files/AG_0335.pdf'),
-(274, 'Upload Files/AG_0335.pdf'),
-(275, 'Upload Files/05.2023_-_41973722.pdf'),
-(276, 'Upload Files/05.2023_-_41973722.pdf'),
-(277, 'Upload Files/AGP-052023-2735-00016205990-030620230054.pdf');
-
--- --------------------------------------------------------
-
---
--- Despejando dados para a tabela `geradores_geradores`
---
-
-INSERT INTO `geradores_geradores` (`id`, `nome`, `uc`, `status`, `distribuidora_id`, `admin_id`, `cliente_id`, `senha`) VALUES
-(4, 'KHOLER 1', '103710124', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(6, 'KHOLER 2', '9198750', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(18, 'KASPER', '11151617', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(19, '96070900', '96070900', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(22, 'MWM', '48966365', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(23, 'Scania', '52537266', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(24, 'Solar 1', '31172756', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(25, 'Solar 2', '42944114', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(26, 'Solar 3', '21909386', 1, 2, 1, 1, '69bf0bc46f51b33377c4f3d92caf876714f6bbbe99e7544487327920873f9820'),
-(27, 'Jaciel', '53903541', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(28, 'Edson', '41973722', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(29, 'Vilmar', '52496373', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(30, 'Felipe Mott', '32205151', 1, 2, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(31, '9057617', '9057617', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(32, 'ROGERIO', '9791329', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(33, 'NETTSON', '11677058', 1, 1, 1, 1, '69bf0bc46f51b33377c4f3d92caf876714f6bbbe99e7544487327920873f9820'),
-(34, 'FRANCISCO', '99884771', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(35, 'BONATTO', '80299296', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(36, 'DOUGLAS', '9790799', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(37, 'CASSOL', '108983536', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(38, 'THALES', '106473085', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(39, 'EDUARDO', '108570010', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(40, 'AND. 1', '109869079', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(41, 'AND. 2', '109869630', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(42, 'PAULO', '109876830', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
-(43, 'DALTON', '109852621', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4');
-
--- --------------------------------------------------------
 
 
 --
