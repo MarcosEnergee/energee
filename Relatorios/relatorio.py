@@ -36,7 +36,7 @@ class Relatorio:
         return consumidores
 
     def consumoGraficoAdmin(self):
-        query = f'SELECT uc,referencia,qtdconsumo-qtdmptte FROM relatorios_consumidor'
+        query = f'SELECT uc,referencia,qtdconsumo-qtdmptte FROM Relatorios_consumidor'
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -46,7 +46,7 @@ class Relatorio:
         return resultado
     
     def consumoGraficoAdmin_celesc(self):
-        query = ' SELECT uc,Referencia,Energia_Ativa+Energia_AtivaFP FROM relatorios_gerador_celesc '
+        query = ' SELECT uc,Referencia,Energia_Ativa+Energia_AtivaFP FROM Relatorios_gerador_celesc '
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -55,7 +55,7 @@ class Relatorio:
         return resultado
     
     def GeracaoGraficoAdmin(self):
-        query = ' SELECT uc,Referencia, SUM(Energia_Injetada) FROM `relatorios_gerador` GROUP BY Referencia'
+        query = ' SELECT uc,Referencia, SUM(Energia_Injetada) FROM `Relatorios_gerador` GROUP BY Referencia'
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -65,7 +65,7 @@ class Relatorio:
         return resultado
     
     def GeracaoGraficoAdmin_celesc(self):
-        query = ' SELECT uc,Referencia,Energia_Injetada+Energia_InjetadaFP FROM relatorios_gerador_celesc '
+        query = ' SELECT uc,Referencia,Energia_Injetada+Energia_InjetadaFP FROM Relatorios_gerador_celesc '
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -77,7 +77,7 @@ class Relatorio:
     def GeracaoAdmin(self, referencia):
 
         geracao = {}
-        query = f' SELECT SUM(Energia_Injetada) FROM relatorios_gerador WHERE referencia= {referencia}'
+        query = f' SELECT SUM(Energia_Injetada) FROM Relatorios_gerador WHERE referencia= {referencia}'
         cursor = connection.cursor()
         cursor.execute(query)
         try:
@@ -86,7 +86,7 @@ class Relatorio:
             geracao['copel'] = 0
         
 
-        query = f' SELECT SUM(Energia_Injetada+Energia_InjetadaFP) FROM relatorios_gerador_celesc WHERE referencia= {referencia}'
+        query = f' SELECT SUM(Energia_Injetada+Energia_InjetadaFP) FROM Relatorios_gerador_celesc WHERE referencia= {referencia}'
         cursor = connection.cursor()
         cursor.execute(query)
 
@@ -102,7 +102,7 @@ class Relatorio:
     def ConsumoAdmin(self, referencia):
 
         consumo = {}
-        query = f' SELECT SUM(Energia_Ativa) FROM relatorios_gerador WHERE referencia= {referencia}'
+        query = f' SELECT SUM(Energia_Ativa) FROM Relatorios_gerador WHERE referencia= {referencia}'
         cursor = connection.cursor()
         cursor.execute(query)
         try:
@@ -110,7 +110,7 @@ class Relatorio:
         except:
             consumo['copel'] = 0
 
-        query = f' SELECT SUM(Energia_Ativa) FROM relatorios_gerador_celesc WHERE referencia= {referencia}'
+        query = f' SELECT SUM(Energia_Ativa) FROM Relatorios_gerador_celesc WHERE referencia= {referencia}'
         cursor = connection.cursor()
         cursor.execute(query)
 
@@ -126,7 +126,7 @@ class Relatorio:
     def InjetadoAdmin(self, referencia):
 
         injetado = {}
-        query = f' SELECT SUM(Energia_Injetada)-SUM(Energia_Ativa) FROM relatorios_gerador WHERE referencia= {referencia}'
+        query = f' SELECT SUM(Energia_Injetada)-SUM(Energia_Ativa) FROM Relatorios_gerador WHERE referencia= {referencia}'
         cursor = connection.cursor()
         cursor.execute(query)
 
@@ -136,7 +136,7 @@ class Relatorio:
             injetado['copel'] = 0
 
         query = ' SELECT Energia_Injetada, Energia_Ativa, Energia_InjetadaFP,Energia_AtivaFP '
-        query += f' FROM relatorios_gerador_celesc  WHERE referencia= {referencia}'
+        query += f' FROM Relatorios_gerador_celesc  WHERE referencia= {referencia}'
         cursor = connection.cursor()
         cursor.execute(query)
         resultado = cursor.fetchall()
@@ -200,7 +200,7 @@ class Relatorio:
         
     def AtualizarUp(self):
         
-        query = f'UPDATE relatorios_gerador SET up = 0'
+        query = f'UPDATE Relatorios_gerador SET up = 0'
         
         cursor = connection.cursor()
         cursor.execute(query)
@@ -209,7 +209,7 @@ class Relatorio:
 
     def AtualizarUp_Celesc(self):
         
-        query = f'UPDATE relatorios_gerador_celesc SET up = 0'
+        query = f'UPDATE Relatorios_gerador_celesc SET up = 0'
         
         cursor = connection.cursor()
         cursor.execute(query)
@@ -218,7 +218,7 @@ class Relatorio:
 
     def VerificaUpdate(self):
 
-        query = f' SELECT * FROM relatorios_gerador WHERE up=1 '
+        query = f' SELECT * FROM Relatorios_gerador WHERE up=1 '
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -229,7 +229,7 @@ class Relatorio:
 
     def VerificaUpdate_Celesc(self):
 
-        query = f' SELECT * FROM relatorios_gerador_celesc WHERE up=1 '
+        query = f' SELECT * FROM Relatorios_gerador_celesc WHERE up=1 '
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -257,7 +257,7 @@ class Relatorio:
         cursor.fetchone()
 
     def CreditoCli(self,ref):
-        query = f'SELECT qtdmptte FROM relatorios_consumidor WHERE referencia= {ref}'
+        query = f'SELECT qtdmptte FROM Relatorios_consumidor WHERE referencia= {ref}'
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -347,7 +347,7 @@ class Relatorio:
 
     def Referencias(self,cli=None):
         lista=[]
-        query = f' SELECT DISTINCT(Referencia) FROM relatorios_gerador '
+        query = f' SELECT DISTINCT(Referencia) FROM Relatorios_gerador '
 
         if cli !=None:
             query += f' WHERE cliente_id= {cli} '
@@ -363,7 +363,7 @@ class Relatorio:
         return lista
     
     def ReferenciasAdm(self,cli=None):
-        query = f' SELECT DISTINCT(Referencia), liberado FROM relatorios_gerador '
+        query = f' SELECT DISTINCT(Referencia), liberado FROM Relatorios_gerador '
 
         if cli !=None:
             query += f' WHERE cliente_id= {cli} '
@@ -383,7 +383,7 @@ class Relatorio:
         return dic
     
     def ReferenciasAdm_celesc(self,cli=None):
-        query = f' SELECT DISTINCT(Referencia), liberado FROM relatorios_gerador_celesc '
+        query = f' SELECT DISTINCT(Referencia), liberado FROM Relatorios_gerador_celesc '
 
         if cli !=None:
             query += f' WHERE cliente_id= {cli} '
@@ -405,7 +405,7 @@ class Relatorio:
 
     def ReferenciasGerador(self,cli=None):
         lista=[]
-        query = f' SELECT DISTINCT(Referencia) FROM relatorios_gerador '
+        query = f' SELECT DISTINCT(Referencia) FROM Relatorios_gerador '
         query += f' WHERE liberado=1 '
 
 
@@ -421,7 +421,7 @@ class Relatorio:
 
     def ReferenciasGerador_celesc(self,cli=None):
         lista=[]
-        query = f' SELECT DISTINCT(Referencia) FROM relatorios_gerador_celesc '
+        query = f' SELECT DISTINCT(Referencia) FROM Relatorios_gerador_celesc '
         query += f' WHERE liberado=1 '
 
 
@@ -437,7 +437,7 @@ class Relatorio:
 
     def Referencias_Celesc(self, cli=None):
         lista=[]
-        query = f' SELECT DISTINCT(Referencia) FROM relatorios_gerador_celesc '
+        query = f' SELECT DISTINCT(Referencia) FROM Relatorios_gerador_celesc '
 
         if cli !=None:
             query += f' WHERE cliente_id= {cli} '
@@ -508,7 +508,7 @@ class Relatorio:
 
     def ucsConsum(self):
         lista=[]
-        query = ' SELECT DISTINCT(uc) FROM relatorios_consumidor '
+        query = ' SELECT DISTINCT(uc) FROM Relatorios_consumidor '
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -523,7 +523,7 @@ class Relatorio:
     def ucsStatusConsum(self, ref):
         uc=[]
         status = []
-        query = f' SELECT uc,status FROM relatorios_consumidor WHERE referencia= {ref}'
+        query = f' SELECT uc,status FROM Relatorios_consumidor WHERE referencia= {ref}'
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -537,7 +537,7 @@ class Relatorio:
         return uc,status
 
     def consumoGd(self,referencia=None):
-        query = ' SELECT uc,Referencia,Energia_Ativa FROM relatorios_gerador '
+        query = ' SELECT uc,Referencia,Energia_Ativa FROM Relatorios_gerador '
 
         if referencia != None: 
             query += f' WHERE referencia= {referencia}'
@@ -550,7 +550,7 @@ class Relatorio:
         return resultado
 
     def consumoGrafico(self,uc, ref=None):
-        query = ' SELECT uc,Referencia,Energia_Ativa FROM relatorios_gerador '
+        query = ' SELECT uc,Referencia,Energia_Ativa FROM Relatorios_gerador '
 
         if uc != None: 
             query += f' WHERE uc= {uc}'
@@ -566,7 +566,7 @@ class Relatorio:
         return resultado
 
     def ArmazenadoNaUnd(self,uc, ref=None):
-        query = ' SELECT uc,Referencia,Saldo_Final FROM relatorios_gerador '
+        query = ' SELECT uc,Referencia,Saldo_Final FROM Relatorios_gerador '
 
         if uc != None: 
             query += f' WHERE uc= {uc}'
@@ -581,7 +581,7 @@ class Relatorio:
         return resultado
     
     def ArmazenadoNaUnd_celesc(self,uc, ref=None):
-        query = ' SELECT uc,Referencia,Saldo_Final FROM relatorios_gerador_celesc '
+        query = ' SELECT uc,Referencia,Saldo_Final FROM Relatorios_gerador_celesc '
 
         if uc != None: 
             query += f' WHERE uc= {uc}'
@@ -596,7 +596,7 @@ class Relatorio:
         return resultado
    
     def consumoGrafico_celesc(self,uc, ref=None):
-        query = ' SELECT uc,Referencia,Energia_Ativa+Energia_AtivaFP FROM relatorios_gerador_celesc '
+        query = ' SELECT uc,Referencia,Energia_Ativa+Energia_AtivaFP FROM Relatorios_gerador_celesc '
 
         if uc != None: 
             query += f' WHERE uc= {uc}'
@@ -612,7 +612,7 @@ class Relatorio:
         return resultado
 
     def GeracaoGrafico(self,uc, ref=None):
-        query = ' SELECT uc,Referencia,Energia_Injetada FROM relatorios_gerador '
+        query = ' SELECT uc,Referencia,Energia_Injetada FROM Relatorios_gerador '
 
         if uc != None: 
             query += f' WHERE uc= {uc}'
@@ -628,7 +628,7 @@ class Relatorio:
         return resultado
 
     def GeracaoGrafico_celesc(self,uc, ref=None):
-        query = ' SELECT uc,Referencia,Energia_Injetada+Energia_InjetadaFP FROM relatorios_gerador_celesc '
+        query = ' SELECT uc,Referencia,Energia_Injetada+Energia_InjetadaFP FROM Relatorios_gerador_celesc '
 
         if uc != None: 
             query += f' WHERE uc= {uc}'
@@ -644,7 +644,7 @@ class Relatorio:
         return resultado
 
     def Geracao(self,referencia=None):
-        query = ' SELECT uc,Referencia,Energia_Injetada FROM relatorios_gerador '
+        query = ' SELECT uc,Referencia,Energia_Injetada FROM Relatorios_gerador '
 
         if referencia != None: 
             query += f' WHERE referencia= {referencia}'
@@ -657,7 +657,7 @@ class Relatorio:
         return resultado
 
     def InjetadaInd(self,uc,cli,ref=None):
-        query = f' SELECT Energia_Injetada-Energia_Ativa FROM relatorios_gerador WHERE uc= {uc} ' 
+        query = f' SELECT Energia_Injetada-Energia_Ativa FROM Relatorios_gerador WHERE uc= {uc} ' 
         query += f' AND cliente_id= {cli} '
 
         if ref != None: 
@@ -674,7 +674,7 @@ class Relatorio:
         return resultado
 
     def EnergiaInj(self,referencia=None):
-        query = ' SELECT uc,Referencia,Energia_Injetada-Energia_Ativa FROM relatorios_gerador '
+        query = ' SELECT uc,Referencia,Energia_Injetada-Energia_Ativa FROM Relatorios_gerador '
 
         if referencia != None: 
             query += f' WHERE referencia= {referencia}'
@@ -699,7 +699,7 @@ class Relatorio:
 
     def SaldoFinalTotal(self,referencia):
         query = ' SELECT SUM(Saldo_Final) '
-        query += f' FROM relatorios_azul  WHERE referencia= {referencia}'
+        query += f' FROM Relatorios_azul  WHERE referencia= {referencia}'
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -711,7 +711,7 @@ class Relatorio:
     def InjecaoTotal(self,referencia,cli):
 
         query = ' SELECT Energia_Injetada, Energia_Ativa '
-        query += f' FROM relatorios_gerador  WHERE referencia= {referencia}'
+        query += f' FROM Relatorios_gerador  WHERE referencia= {referencia}'
         query += f' AND cliente_id= {cli} '
 
         cursor = connection.cursor()
@@ -732,7 +732,7 @@ class Relatorio:
     def valorGerador(self,referencia, cli, uc=None):
         dic = {} 
 
-        query = 'SELECT * FROM relatorios_gerador as r JOIN Geradores_geradores AS g   ON r.uc = g.uc'
+        query = 'SELECT * FROM Relatorios_gerador as r JOIN Geradores_geradores AS g   ON r.uc = g.uc'
         query += f' WHERE r.Referencia= {referencia}'
         query += f' AND r.cliente_id= {cli}'
 
@@ -950,7 +950,7 @@ class Relatorio:
 
     def SaldoFinalCliInd(self,referencia):
 
-        query = f'SELECT Saldo_Final FROM relatorios_azul a WHERE Referencia= {referencia}'
+        query = f'SELECT Saldo_Final FROM Relatorios_azul a WHERE Referencia= {referencia}'
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -961,7 +961,7 @@ class Relatorio:
 
     def SaldoFinalCli(self,referencia,cli):
 
-        query = f'SELECT SUM(Saldo_Final) FROM relatorios_azul a WHERE Referencia= {referencia}'
+        query = f'SELECT SUM(Saldo_Final) FROM Relatorios_azul a WHERE Referencia= {referencia}'
         query += f' AND cliente_id= {cli}'
         query += f' AND status= 1'
 
@@ -973,7 +973,7 @@ class Relatorio:
         return resultado
 
     def CredCompensado(self,referencia,cli):
-        query = f'SELECT SUM(qtdmptte) FROM relatorios_consumidor WHERE referencia= {referencia}'
+        query = f'SELECT SUM(qtdmptte) FROM Relatorios_consumidor WHERE referencia= {referencia}'
         query += f' AND cliente_id= {cli}'
 
         cursor = connection.cursor()
@@ -1041,7 +1041,7 @@ class Relatorio:
         return sum(lista)
 
     def CreditoBruto(self,referencia):
-        query = f'SELECT SUM(valormptte+valormpttusd) FROM relatorios_consumidor a WHERE Referencia= {referencia}'
+        query = f'SELECT SUM(valormptte+valormpttusd) FROM Relatorios_consumidor a WHERE Referencia= {referencia}'
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -1053,7 +1053,7 @@ class Relatorio:
     
     def consumoTotal(self, ref=None):
         
-        query = f'SELECT referencia,SUM(qtdconsumo-qtdmptte) FROM relatorios_consumidor'
+        query = f'SELECT referencia,SUM(qtdconsumo-qtdmptte) FROM Relatorios_consumidor'
 
         if ref != None: 
             query += f' WHERE Referencia= {ref}'
@@ -1067,7 +1067,7 @@ class Relatorio:
 
     def consumoTotalMaior(self, ref=None):
         
-        query = f'SELECT referencia,qtdconsumo-qtdmptte FROM relatorios_consumidor'
+        query = f'SELECT referencia,qtdconsumo-qtdmptte FROM Relatorios_consumidor'
 
         if ref != None: 
             query += f' WHERE Referencia= {ref}'
@@ -1081,7 +1081,7 @@ class Relatorio:
 
     def TotalConsumo(self, ref=None):
         
-        query = f'SELECT referencia,sum(qtdconsumo) FROM relatorios_consumidor'
+        query = f'SELECT referencia,sum(qtdconsumo) FROM Relatorios_consumidor'
 
         if ref != None: 
             query += f' WHERE Referencia= {ref}'
@@ -1094,7 +1094,7 @@ class Relatorio:
         return resultado
 
     def CountConsumo(self, ref):
-        query = f'SELECT COUNT(qtdconsumo-qtdmptte) FROM relatorios_consumidor WHERE qtdconsumo-qtdmptte > 500 '
+        query = f'SELECT COUNT(qtdconsumo-qtdmptte) FROM Relatorios_consumidor WHERE qtdconsumo-qtdmptte > 500 '
         query += f' AND referencia= {ref}'
 
         cursor = connection.cursor()
@@ -1105,7 +1105,7 @@ class Relatorio:
         return resultado
     
     def ContaConsumo(self, uc):
-        query = f'SELECT qtdconsumo FROM `relatorios_consumidor` WHERE uc="{uc}" '
+        query = f'SELECT qtdconsumo FROM `Relatorios_consumidor` WHERE uc="{uc}" '
         cursor = connection.cursor()
         cursor.execute(query)
 
@@ -1114,7 +1114,7 @@ class Relatorio:
         return resultado
         
     def CountConsumoMenor(self,ref):
-        query = f'SELECT COUNT(`qtdconsumo`) FROM `relatorios_consumidor` WHERE `qtdconsumo` <200 AND referencia="{ref}" AND status=1'
+        query = f'SELECT COUNT(`qtdconsumo`) FROM `Relatorios_consumidor` WHERE `qtdconsumo` <200 AND referencia="{ref}" AND status=1'
         cursor = connection.cursor()
         cursor.execute(query)
 
@@ -2825,7 +2825,7 @@ class Relatorio:
 
     def Conta_gerados_copel(self):
 
-        query = f' SELECT COUNT(DISTINCT(Referencia)) FROM `relatorios_gerador`'
+        query = f' SELECT COUNT(DISTINCT(Referencia)) FROM `Relatorios_gerador`'
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -2848,7 +2848,7 @@ class Relatorio:
     
     def Conta_gerados_celesc(self):
 
-        query = f' SELECT COUNT(DISTINCT(Referencia)) FROM `relatorios_gerador_celesc`'
+        query = f' SELECT COUNT(DISTINCT(Referencia)) FROM `Relatorios_gerador_celesc`'
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -3955,7 +3955,7 @@ class Relatorio:
     def valorGerador_Celesc(self,referencia, cli, uc=None):
         dic = {} 
 
-        query = 'SELECT * FROM relatorios_gerador_celesc as r JOIN Geradores_geradores AS g   ON r.uc = g.uc'
+        query = 'SELECT * FROM Relatorios_gerador_celesc as r JOIN Geradores_geradores AS g   ON r.uc = g.uc'
         query += f' WHERE r.Referencia= {referencia}'
         query += f' AND r.cliente_id= {cli}'
 
@@ -4153,7 +4153,7 @@ class Relatorio:
         return lista
 
     def InjetadaInd_Celesc(self,uc,cli,ref=None):
-        query = f' SELECT Energia_Injetada,Energia_Ativa,Energia_InjetadaFP,Energia_AtivaFP FROM relatorios_gerador_celesc WHERE uc= {uc} ' 
+        query = f' SELECT Energia_Injetada,Energia_Ativa,Energia_InjetadaFP,Energia_AtivaFP FROM Relatorios_gerador_celesc WHERE uc= {uc} ' 
         query += f' AND cliente_id= {cli} '
 
         if ref != None: 
@@ -4181,7 +4181,7 @@ class Relatorio:
     def InjecaoTotal_Celesc(self,referencia,cli):
 
         query = ' SELECT Energia_Injetada, Energia_Ativa, Energia_InjetadaFP,Energia_AtivaFP '
-        query += f' FROM relatorios_gerador_celesc  WHERE referencia= {referencia}'
+        query += f' FROM Relatorios_gerador_celesc  WHERE referencia= {referencia}'
         query += f' AND cliente_id= {cli} '
 
         cursor = connection.cursor()
@@ -4214,7 +4214,7 @@ class Relatorio:
     def Injecao_Celesc(self,cli):
 
         query = ' SELECT Energia_Injetada, Energia_Ativa, Energia_InjetadaFP,Energia_AtivaFP,uc,Referencia '
-        query += f' FROM relatorios_gerador_celesc '
+        query += f' FROM Relatorios_gerador_celesc '
         query += f' WHERE cliente_id= {cli} '
 
         cursor = connection.cursor()
@@ -4256,7 +4256,7 @@ class Relatorio:
 
     def SaldoFinalCli_Celesc(self,referencia,cli):
 
-        query = f'SELECT SUM(Saldo_Final) FROM relatorios_azul_celesc a WHERE Referencia= {referencia}'
+        query = f'SELECT SUM(Saldo_Final) FROM Relatorios_azul_celesc a WHERE Referencia= {referencia}'
         query += f' AND cliente_id= {cli}'
         query += f' AND admin_id= 1'
 
@@ -4268,7 +4268,7 @@ class Relatorio:
         return resultado
 
     def Geracao_Celesc(self,referencia=None):
-        query = ' SELECT uc,Referencia,Energia_Injetada FROM relatorios_gerador_celesc '
+        query = ' SELECT uc,Referencia,Energia_Injetada FROM Relatorios_gerador_celesc '
 
         if referencia != None: 
             query += f' WHERE referencia= {referencia}'
@@ -4281,7 +4281,7 @@ class Relatorio:
         return resultado
 
     def consumoGd_Celesc(self,referencia=None):
-        query = ' SELECT uc,Referencia,Energia_Ativa FROM relatorios_gerador_celesc '
+        query = ' SELECT uc,Referencia,Energia_Ativa FROM Relatorios_gerador_celesc '
 
         if referencia != None: 
             query += f' WHERE referencia= {referencia}'
@@ -4298,7 +4298,7 @@ class Relatorio:
         query = f'SELECT '
         query += f'  SUM(MptTEQtd) + SUM(MptQtd) + SUM(OptTEQtd) + SUM(OptQtd) + SUM(PtMptTEQtd) + SUM(PtMptTUSDQtd) '
         query += f' FROM '
-        query += f' relatorios_consumidor_celesc ' 
+        query += f' Relatorios_consumidor_celesc ' 
         query += f' WHERE '
         query += f' referencia = {referencia} '
         query += f' AND cliente_id= {cli}'
@@ -4313,7 +4313,7 @@ class Relatorio:
         query = f'SELECT '
         query += f'  SUM(MptTEQtd) + SUM(MptQtd) + SUM(OptTEQtd) + SUM(OptQtd) + SUM(PtMptTEQtd) + SUM(PtMptTUSDQtd) '
         query += f' FROM '
-        query += f' relatorios_consumidor_celesc ' 
+        query += f' Relatorios_consumidor_celesc ' 
         query += f' WHERE '
         query += f' referencia = {referencia} '
         query += f' AND cliente_id= {cli}'
@@ -4330,7 +4330,7 @@ class Relatorio:
         query = f'SELECT '
         query += f'  SUM(MptTEValor) + SUM(MptTUSDValor) + SUM(MptValor) + SUM(OptTEValor) + SUM(OptTUSDValor) + SUM(OptValor) + SUM(PtMptTUSDValor) + SUM(PtMptValor) + SUM(FpMptTEValor) + SUM(FpMptTUSDValor) + SUM(FpMptValor) '
         query += f' FROM '
-        query += f' relatorios_consumidor_celesc ' 
+        query += f' Relatorios_consumidor_celesc ' 
         query += f' WHERE '
         query += f' referencia = {referencia} '
         query += f' AND cliente_id= {cli}'
@@ -4350,7 +4350,7 @@ class Relatorio:
         query = f'SELECT '
         query += f'  SUM(MptTEValor) + SUM(MptTUSDValor) + SUM(MptValor) + SUM(OptTEValor) + SUM(OptTUSDValor) + SUM(OptValor) + SUM(PtMptTUSDValor) + SUM(PtMptValor) + SUM(FpMptTEValor) + SUM(FpMptTUSDValor) + SUM(FpMptValor) '
         query += f' FROM '
-        query += f' relatorios_consumidor_celesc ' 
+        query += f' Relatorios_consumidor_celesc ' 
         query += f' WHERE '
         query += f' referencia = {referencia} '
         query += f' AND cliente_id= {cli}'
@@ -4420,7 +4420,7 @@ class Relatorio:
 
     def RelatorioGerador(self,uc=None):
         
-        query = ' SELECT Referencia,Energia_Ativa,Energia_Injetada,Energia_Injetada-Energia_Ativa,Saldo_Final FROM relatorios_gerador '
+        query = ' SELECT Referencia,Energia_Ativa,Energia_Injetada,Energia_Injetada-Energia_Ativa,Saldo_Final FROM Relatorios_gerador '
 
         if uc != None: 
             query += f' WHERE uc= {uc}'
@@ -4441,7 +4441,7 @@ class Relatorio:
 
     def RelatorioGerador_Celesc(self,uc=None):
         
-        query = ' SELECT Referencia,Energia_Ativa,Energia_Injetada,Energia_AtivaFp,Energia_InjetadaFP,Saldo_Final FROM relatorios_gerador_celesc '
+        query = ' SELECT Referencia,Energia_Ativa,Energia_Injetada,Energia_AtivaFp,Energia_InjetadaFP,Saldo_Final FROM Relatorios_gerador_celesc '
 
         if uc != None: 
             query += f' WHERE uc= {uc}'
@@ -4507,7 +4507,7 @@ class Relatorio:
     
     def Atualiza_liberado_copel(self,ref,status):
         
-        query = f'UPDATE relatorios_gerador SET liberado ={status} '
+        query = f'UPDATE Relatorios_gerador SET liberado ={status} '
         query += f' WHERE Referencia= {ref}'
 
         cursor = connection.cursor()
@@ -4516,7 +4516,7 @@ class Relatorio:
     
     def Atualiza_liberado_celesc(self,ref,status):
         
-        query = f'UPDATE relatorios_gerador_celesc SET liberado ={status} '
+        query = f'UPDATE Relatorios_gerador_celesc SET liberado ={status} '
         query += f' WHERE Referencia= {ref}'
 
         cursor = connection.cursor()
