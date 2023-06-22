@@ -191,7 +191,7 @@ class Relatorio:
 
     def ApagarArmT(self,dist):
 
-        query = f'DELETE FROM relatorios_armazenamentototal WHERE distribuidora_id={dist}  '
+        query = f'DELETE FROM Relatorios_armazenamentototal WHERE distribuidora_id={dist}  '
         
         cursor = connection.cursor()
         cursor.execute(query)
@@ -248,7 +248,7 @@ class Relatorio:
         cursor.fetchone()
 
     def inserirAmarzenadoT(self,uc,Referencia,valor,admin_id,distribuidora_id,cliente_id):
-        query = 'INSERT INTO relatorios_armazenamentototal (uc,Referencia,valor,admin_id,distribuidora_id,cliente_id)'
+        query = 'INSERT INTO Relatorios_armazenamentototal (uc,Referencia,valor,admin_id,distribuidora_id,cliente_id)'
         query+= f' VALUES ("{uc}","{Referencia}","{valor}","{admin_id}","{distribuidora_id}","{cliente_id}")'
 
         cursor = connection.cursor()
@@ -907,7 +907,7 @@ class Relatorio:
 
     def ArmTotalTodos(self,dist, referencia=None):
 
-        query = f'SELECT uc,Referencia,valor FROM relatorios_armazenamentototal '
+        query = f'SELECT uc,Referencia,valor FROM Relatorios_armazenamentototal '
         query += f' WHERE distribuidora_id= {dist}'
 
         if referencia != None: 
@@ -922,7 +922,7 @@ class Relatorio:
 
     def ArmTotal(self,referencia,uc,cli,dist):
 
-        query = f'SELECT valor FROM relatorios_armazenamentototal a WHERE Referencia= {referencia}'
+        query = f'SELECT valor FROM Relatorios_armazenamentototal a WHERE Referencia= {referencia}'
         query += f' AND uc= {uc}'
         query += f' AND cliente_id= {cli}'
         query += f' AND distribuidora_id= {dist}'
@@ -939,7 +939,7 @@ class Relatorio:
 
     def ArmTotalucs(self,referencia):
 
-        query = f'SELECT SUM(valor) FROM relatorios_armazenamentototal a WHERE Referencia= {referencia}'
+        query = f'SELECT SUM(valor) FROM Relatorios_armazenamentototal a WHERE Referencia= {referencia}'
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -4489,7 +4489,7 @@ class Relatorio:
 
     def RelatorioGerador_total(self,uc,dist):
         
-        query = ' SELECT valor FROM relatorios_armazenamentototal '
+        query = ' SELECT valor FROM Relatorios_armazenamentototal '
         query += f' WHERE distribuidora_id= {dist}'
 
         if uc != None: 
