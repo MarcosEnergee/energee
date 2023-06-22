@@ -182,7 +182,7 @@ class Relatorio:
     
     def ApagarArmM(self,dist):
 
-        query = f'DELETE FROM relatorios_ArmazenamentoMensal WHERE distribuidora_id={dist} '
+        query = f'DELETE FROM Relatorios_armazenamentomensal WHERE distribuidora_id={dist} '
         
         cursor = connection.cursor()
         cursor.execute(query)
@@ -239,7 +239,7 @@ class Relatorio:
         return resultado
     
     def inserirAmarzenadoM(self,uc,Referencia,valor,admin_id,distribuidora_id,cliente_id):
-        query = 'INSERT INTO relatorios_ArmazenamentoMensal (uc,Referencia,valor,admin_id,distribuidora_id,cliente_id)'
+        query = 'INSERT INTO Relatorios_armazenamentomensal (uc,Referencia,valor,admin_id,distribuidora_id,cliente_id)'
         query+= f' VALUES ("{uc}","{Referencia}","{valor}","{admin_id}","{distribuidora_id}","{cliente_id}")'
 
         cursor = connection.cursor()
@@ -878,7 +878,7 @@ class Relatorio:
 
     def ArmMensal(self,referencia,uc,cli,dist):
 
-        query = f'SELECT valor FROM relatorios_ArmazenamentoMensal a WHERE Referencia= {referencia}'
+        query = f'SELECT valor FROM Relatorios_armazenamentomensal a WHERE Referencia= {referencia}'
         query += f' AND uc= {uc}'
         query += f' AND cliente_id= {cli}'
         query += f' AND distribuidora_id= {dist}'
@@ -892,7 +892,7 @@ class Relatorio:
 
     def ArmMensalTodos(self,dist,referencia=None):
 
-        query = f'SELECT uc,Referencia,valor FROM relatorios_ArmazenamentoMensal '
+        query = f'SELECT uc,Referencia,valor FROM Relatorios_armazenamentomensal '
         query += f' WHERE distribuidora_id= {dist}'
 
         if referencia != None: 
@@ -2836,7 +2836,7 @@ class Relatorio:
 
     def Conta_ArmazenadosMCopel(self):
 
-        query = f' SELECT COUNT(DISTINCT(Referencia)) FROM `relatorios_ArmazenamentoMensal` WHERE distribuidora_id=1 '
+        query = f' SELECT COUNT(DISTINCT(Referencia)) FROM `Relatorios_armazenamentomensal` WHERE distribuidora_id=1 '
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -2871,7 +2871,7 @@ class Relatorio:
             
     def Conta_ArmazenadosM(self):
 
-        query = f' SELECT COUNT(DISTINCT(Referencia)) FROM `relatorios_ArmazenamentoMensal` WHERE distribuidora_id=2 '
+        query = f' SELECT COUNT(DISTINCT(Referencia)) FROM `Relatorios_armazenamentomensal` WHERE distribuidora_id=2 '
 
         cursor = connection.cursor()
         cursor.execute(query)
@@ -4472,7 +4472,7 @@ class Relatorio:
     
     def RelatorioGerador_mensal(self,uc,dist):
         
-        query = ' SELECT valor FROM relatorios_ArmazenamentoMensal '
+        query = ' SELECT valor FROM Relatorios_armazenamentomensal '
         query += f' WHERE distribuidora_id= {dist}'
         if uc != None: 
             query += f' AND uc= {uc}'
