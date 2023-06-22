@@ -11,24 +11,11 @@ class Geradores(models.Model):
     admin = models.ForeignKey(Administradores, on_delete=models.SET_NULL, null=True)
     cliente = models.ForeignKey(Clientes, on_delete=models.SET_NULL, null=True)
     senha = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = 'geradores_geradores'
     
     def __str__(self) -> str:
         return self.nome
 
 
-""" <label class="block text-sm mt-4">
-    <span class="text-gray-700 dark:text-gray-400">Desconto do Cliente %</span>
-    <input
-      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-      type="number" name="descontoCliente"
-    />
-  </label>
-
-  <label class="block text-sm mt-4">
-    <span class="text-gray-700 dark:text-gray-400">Desconto de Gestao %</span>
-    <input
-      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-      type="number" name="descontoGestao"
-    />
-  </label>
- """
