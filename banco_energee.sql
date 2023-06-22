@@ -5828,7 +5828,7 @@ INSERT INTO `Relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `spl
 (3252, '11677058', '052022', '0', '0', '0', '0', '0', '0', '0', '1533.0', '0', '0', 1, 1, 2),
 (3253, '11677058', '062022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (3254, '11677058', '072022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2);
-INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
+INSERT INTO `Relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
 (3255, '11677058', '082022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (3256, '11677058', '092022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (3257, '11677058', '102022', '4411.27', '6641', '2899.41', '3749.58', '0.56', '2999.66', '0.45', '2716.19', '0.66', '0', 1, 1, 2),
