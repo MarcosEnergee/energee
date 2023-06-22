@@ -10,7 +10,7 @@ def list(request):
         consumidores = Consumidores.objects.all()
         dados_paginator = Paginator(consumidores,20)
         page_num = request.GET.get('page')
-        page = none
+        page = None
         nome = request.session['nome']
         return render(request, 'listconsumidor.html', {'nome':nome,"consumidores": page.object_list, "page": page,'nivel':nivel})
     else:
