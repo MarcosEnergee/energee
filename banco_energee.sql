@@ -5368,7 +5368,7 @@ INSERT INTO `Relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `spl
 (2791, '52496373', '122021', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (2792, '52496373', '012022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (2793, '52496373', '022022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2);
-INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
+INSERT INTO `Relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
 (2794, '52496373', '032022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (2795, '52496373', '042022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (2796, '52496373', '052022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
