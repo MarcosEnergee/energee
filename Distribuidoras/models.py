@@ -6,5 +6,8 @@ class Distribuidoras(models.Model):
     status = models.IntegerField(default=1)
     cliente = models.ForeignKey(Clientes, on_delete=models.SET_NULL, null=True)
 
+    class Meta:
+        db_table = 'distribuidoras_distribuidoras'
+
     def __str__(self) -> str:
         return self.nome
