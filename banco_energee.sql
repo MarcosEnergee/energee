@@ -647,7 +647,7 @@ INSERT INTO `Consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id
 -- Despejando dados para a tabela `relatorios_armazenamentomensal`
 --
 
-INSERT INTO `relatorios_Armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (45905, '103710124', '072019', '0', 1, 1, 1),
 (45906, '103710124', '082019', '0', 1, 1, 1),
 (45907, '103710124', '092019', '0', 1, 1, 1),
@@ -1733,7 +1733,7 @@ INSERT INTO `relatorios_Armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`,
 (48490, ' 21909386 ', ' 062022 ', ' 22 ', 1, 2, 1),
 (48491, ' 21909386 ', ' 072022 ', ' 315 ', 1, 2, 1),
 (48492, ' 21909386 ', ' 082022 ', ' -40 ', 1, 2, 1);
-INSERT INTO `relatorios_ArmazenamentoMensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (48493, ' 21909386 ', ' 092022 ', ' 501 ', 1, 2, 1),
 (48494, ' 21909386 ', ' 102022 ', ' 189 ', 1, 2, 1),
 (48495, ' 21909386 ', ' 112022 ', ' -605 ', 1, 2, 1),
@@ -1987,7 +1987,7 @@ INSERT INTO `relatorios_ArmazenamentoMensal` (`id`, `uc`, `Referencia`, `valor`,
 -- Despejando dados para a tabela `relatorios_armazenamentototal`
 --
 
-INSERT INTO `relatorios_ArmazenamentoTotal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (46273, '103710124', '072019', '0', 1, 1, 1),
 (46274, '103710124', '082019', '0', 1, 1, 1),
 (46275, '103710124', '092019', '0', 1, 1, 1),
@@ -3068,7 +3068,7 @@ INSERT INTO `relatorios_ArmazenamentoTotal` (`id`, `uc`, `Referencia`, `valor`, 
 (48853, ' 53903541 ', ' 072018 ', ' 0 ', 1, 2, 1),
 (48854, ' 53903541 ', ' 082018 ', ' 0 ', 1, 2, 1),
 (48855, ' 53903541 ', ' 092018 ', ' 0 ', 1, 2, 1);
-INSERT INTO `relatorios_ArmazenamentoTotal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (48856, ' 53903541 ', ' 102018 ', ' 0 ', 1, 2, 1),
 (48857, ' 53903541 ', ' 112018 ', ' 0 ', 1, 2, 1),
 (48858, ' 53903541 ', ' 122018 ', ' 0 ', 1, 2, 1),
@@ -3309,7 +3309,7 @@ INSERT INTO `relatorios_ArmazenamentoTotal` (`id`, `uc`, `Referencia`, `valor`, 
 -- Despejando dados para a tabela `relatorios_azul`
 --
 
-INSERT INTO `relatorios_azul` (`id`, `uc`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_azul` (`id`, `uc`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (1, '0', '012019', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
 (2, '0', '022019', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
 (3, '0', '032019', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
@@ -3369,7 +3369,7 @@ INSERT INTO `relatorios_azul` (`id`, `uc`, `Referencia`, `Saldo_Anterior`, `Cred
 -- Despejando dados para a tabela `relatorios_azul_celesc`
 --
 
-INSERT INTO `relatorios_azul_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
+INSERT INTO `Relatorios_azul_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
 (1, '0', '0', '072018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 2),
 (2, '0', '0', '082018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 2),
 (3, '0', '0', '092018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 2),
@@ -3435,7 +3435,7 @@ INSERT INTO `relatorios_azul_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_
 -- Despejando dados para a tabela `relatorios_consumidor`
 --
 
-INSERT INTO `relatorios_consumidor` (`id`, `identificacao`, `uc`, `valor`, `referencia`, `qtdmptte`, `precomptte`, `valormptte`, `qtdmpttusd`, `precompttusd`, `valormpttusd`, `qtdconsumo`, `precoconsumo`, `valorconsumo`, `qtduss`, `precouss`, `valoruss`, `qtdilupubli`, `precoilupubli`, `valorilupubli`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_consumidor` (`id`, `identificacao`, `uc`, `valor`, `referencia`, `qtdmptte`, `precomptte`, `valormptte`, `qtdmpttusd`, `precompttusd`, `valormpttusd`, `qtdconsumo`, `precoconsumo`, `valorconsumo`, `qtduss`, `precouss`, `valoruss`, `qtdilupubli`, `precoilupubli`, `valorilupubli`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (1, '0', '0', '0', '012019', '0', '0', '0', '0', '0', '0', '226604', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
 (2, '0', '0', '0', '022019', '0', '0', '0', '0', '0', '0', '227416', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
 (3, '0', '0', '0', '032019', '0', '0', '0', '0', '0', '0', '178226', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
@@ -3495,7 +3495,7 @@ INSERT INTO `relatorios_consumidor` (`id`, `identificacao`, `uc`, `valor`, `refe
 -- Despejando dados para a tabela `relatorios_consumidor_celesc`
 --
 
-INSERT INTO `relatorios_consumidor_celesc` (`id`, `uc`, `referencia`, `MptTEQtd`, `MptTEValor`, `MptTUSDValor`, `MptQtd`, `MptValor`, `OptTEQtd`, `OptTEValor`, `OptTUSDValor`, `OptQtd`, `OptValor`, `PtMptTEQtd`, `PtMptTUSDQtd`, `PtMptTUSDValor`, `PtMptValor`, `FpMptTEValor`, `FpMptTUSDValor`, `FpMptValor`, `status`, `admin_id`, `cliente_id`, `distribuidora_id`, `PtMptTEValor`) VALUES
+INSERT INTO `Relatorios_consumidor_celesc` (`id`, `uc`, `referencia`, `MptTEQtd`, `MptTEValor`, `MptTUSDValor`, `MptQtd`, `MptValor`, `OptTEQtd`, `OptTEValor`, `OptTUSDValor`, `OptQtd`, `OptValor`, `PtMptTEQtd`, `PtMptTUSDQtd`, `PtMptTUSDValor`, `PtMptValor`, `FpMptTEValor`, `FpMptTUSDValor`, `FpMptValor`, `status`, `admin_id`, `cliente_id`, `distribuidora_id`, `PtMptTEValor`) VALUES
 (2, '0', '072018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 2, '2'),
 (3, '0', '082018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 2, '2'),
 (4, '0', '092018', '18060', '18640', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 2, '2'),
@@ -3561,7 +3561,7 @@ INSERT INTO `relatorios_consumidor_celesc` (`id`, `uc`, `referencia`, `MptTEQtd`
 -- Despejando dados para a tabela `relatorios_gerador`
 --
 
-INSERT INTO `relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`, `up`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
+INSERT INTO `Relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`, `up`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
 (2, '103710124', '177.28', '072019', '0', '0', '6329', '660', '0', '0', '0', '6329', 1, 1, 1, 1, 0, 0, '0', 15, 12),
 (3, '103710124', '199.75', '082019', '0', '0', '7600', '860', '0', '0', '0', '8700', 1, 1, 1, 1, 0, 0, '0', 15, 12),
 (4, '103710124', '133.97', '092019', '0', '0', '37468', '140', '0', '0', '0', '37571', 1, 1, 1, 1, 0, 0, '0', 15, 12),
@@ -4002,7 +4002,7 @@ INSERT INTO `relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Ante
 (448, '9790799', '0', '062021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 7.08 ', 15, 12),
 (449, '9790799', '0', '072021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 7.59 ', 15, 12),
 (450, '9790799', '0', '082021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 7.99 ', 15, 12);
-INSERT INTO `relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`, `up`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
+INSERT INTO `Relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`, `up`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
 (451, '9790799', '0', '092021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 8.97 ', 15, 12),
 (452, '9790799', '0', '102021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 10.49 ', 15, 12),
 (453, '9790799', '0', '112021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 10.38 ', 15, 12),
@@ -4783,7 +4783,7 @@ INSERT INTO `relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Sal
 (422, '52496373', '0', '102018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (423, '52496373', '0', '112018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (424, '52496373', '0', '122018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20);
-INSERT INTO `relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
+INSERT INTO `Relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
 (425, '52496373', '0', '012019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (426, '52496373', '0', '022019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (427, '52496373', '0', '032019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20),
@@ -4910,7 +4910,7 @@ INSERT INTO `relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Sal
 -- Despejando dados para a tabela `relatorios_historico`
 --
 
-INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
+INSERT INTO `Relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
 (2330, '48966365', '072018', '0', '0', '0', '0', '0', '-45.63', '0', '-45.63', '0', '0', 1, 1, 2),
 (2331, '48966365', '082018', '0', '0', '0', '0', '0', '-45.05', '0', '-45.05', '0', '0', 1, 1, 2),
 (2332, '48966365', '092018', '18640.23', '38020', '18590.93', '16217.0', '0.43', '16167.7', '0.43', '16167.7', '0.49', '0.49', 1, 1, 2),
