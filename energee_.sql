@@ -3294,10 +3294,10 @@ INSERT INTO `Relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, 
 -- --------------------------------------------------------
 
 --
--- Despejando dados para a tabela `relatorios_azul`
+-- Despejando dados para a tabela `Relatorios_azul`
 --
 
-INSERT INTO `relatorios_azul` (`id`, `uc`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_azul` (`id`, `uc`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (1, '0', '012019', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
 (2, '0', '022019', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
 (3, '0', '032019', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
@@ -3354,10 +3354,10 @@ INSERT INTO `relatorios_azul` (`id`, `uc`, `Referencia`, `Saldo_Anterior`, `Cred
 -- --------------------------------------------------------
 
 --
--- Despejando dados para a tabela `relatorios_azul_celesc`
+-- Despejando dados para a tabela `Relatorios_azul_celesc`
 --
 
-INSERT INTO `relatorios_azul_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
+INSERT INTO `Relatorios_azul_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
 (1, '0', '0', '072018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 2),
 (2, '0', '0', '082018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 2),
 (3, '0', '0', '092018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 2),
@@ -6498,18 +6498,18 @@ ALTER TABLE `Relatorios_armazenamentototal`
   ADD KEY `Relatorios_armazenam_cliente_id_343ef5e1_fk_Clientes_` (`cliente_id`);
 
 --
--- Índices de tabela `relatorios_azul`
+-- Índices de tabela `Relatorios_azul`
 --
-ALTER TABLE `relatorios_azul`
+ALTER TABLE `Relatorios_azul`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Relatorios_azul_admin_id_e7bf9cae_fk_Administr` (`admin_id`),
   ADD KEY `Relatorios_azul_distribuidora_id_7d4849ff_fk_Distribui` (`distribuidora_id`),
   ADD KEY `Relatorios_azul_cliente_id_abcbf08b_fk_Clientes_clientes_id` (`cliente_id`);
 
 --
--- Índices de tabela `relatorios_azul_celesc`
+-- Índices de tabela `Relatorios_azul_celesc`
 --
-ALTER TABLE `relatorios_azul_celesc`
+ALTER TABLE `Relatorios_azul_celesc`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Relatorios_azul_cele_admin_id_ce556d6e_fk_Administr` (`admin_id`),
   ADD KEY `Relatorios_azul_cele_cliente_id_588ddfde_fk_Clientes_` (`cliente_id`),
@@ -6667,15 +6667,15 @@ ALTER TABLE `Relatorios_armazenamentototal`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49089;
 
 --
--- AUTO_INCREMENT de tabela `relatorios_azul`
+-- AUTO_INCREMENT de tabela `Relatorios_azul`
 --
-ALTER TABLE `relatorios_azul`
+ALTER TABLE `Relatorios_azul`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT de tabela `relatorios_azul_celesc`
+-- AUTO_INCREMENT de tabela `Relatorios_azul_celesc`
 --
-ALTER TABLE `relatorios_azul_celesc`
+ALTER TABLE `Relatorios_azul_celesc`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
@@ -6792,17 +6792,17 @@ ALTER TABLE `Relatorios_armazenamentototal`
   ADD CONSTRAINT `Relatorios_armazenam_distribuidora_id_02ed4648_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
--- Restrições para tabelas `relatorios_azul`
+-- Restrições para tabelas `Relatorios_azul`
 --
-ALTER TABLE `relatorios_azul`
+ALTER TABLE `Relatorios_azul`
   ADD CONSTRAINT `Relatorios_azul_admin_id_e7bf9cae_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
   ADD CONSTRAINT `Relatorios_azul_cliente_id_abcbf08b_fk_Clientes_clientes_id` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
   ADD CONSTRAINT `Relatorios_azul_distribuidora_id_7d4849ff_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
--- Restrições para tabelas `relatorios_azul_celesc`
+-- Restrições para tabelas `Relatorios_azul_celesc`
 --
-ALTER TABLE `relatorios_azul_celesc`
+ALTER TABLE `Relatorios_azul_celesc`
   ADD CONSTRAINT `Relatorios_azul_cele_admin_id_ce556d6e_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
   ADD CONSTRAINT `Relatorios_azul_cele_cliente_id_588ddfde_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
   ADD CONSTRAINT `Relatorios_azul_cele_distribuidora_id_79926fc9_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
