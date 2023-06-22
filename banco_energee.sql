@@ -63,7 +63,7 @@ INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `userna
 -- Despejando dados para a tabela `geradores_geradores`
 --
 
-INSERT INTO `geradores_geradores` (`id`, `nome`, `uc`, `status`, `distribuidora_id`, `admin_id`, `cliente_id`, `senha`) VALUES
+INSERT INTO `Geradores_geradores` (`id`, `nome`, `uc`, `status`, `distribuidora_id`, `admin_id`, `cliente_id`, `senha`) VALUES
 (4, 'KHOLER 1', '103710124', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
 (6, 'KHOLER 2', '9198750', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
 (18, 'KASPER', '11151617', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
