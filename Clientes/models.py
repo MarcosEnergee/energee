@@ -6,7 +6,8 @@ class Clientes(models.Model):
     fone = models.CharField(max_length=15)
     status = models.IntegerField(default=1)
     
-
+    class Meta:
+        db_table = 'clientes_clientes'
 
     def __str__(self) -> str:
         return self.nome
