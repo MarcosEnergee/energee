@@ -8,9 +8,8 @@ def list(request):
     if request.session.get('usuarioAdmin'):
         nivel=1
         consumidores = Consumidores.objects.all()
-
         nome = request.session['nome']
-        return render(request, 'listconsumidor.html', {'nome':nome,"consumidores": consumidores, "page": page,'nivel':nivel})
+        return render(request, 'listconsumidor.html', {'nome':nome,"consumidores": consumidores, "page": None,'nivel':nivel})
     else:
         return redirect('/login/?status=1')
     
