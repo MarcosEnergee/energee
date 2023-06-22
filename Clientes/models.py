@@ -7,7 +7,7 @@ class Clientes(models.Model):
     status = models.IntegerField(default=1)
     
     class Meta:
-        db_table = 'clientes_clientes'
+        db_table = 'Clientes_clientes'
 
     def __str__(self) -> str:
         return self.nome
