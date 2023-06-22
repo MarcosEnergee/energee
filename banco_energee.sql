@@ -22,7 +22,20 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+--
+-- Despejando dados para a tabela `clientes_clientes`
+--
 
+INSERT INTO `clientes_clientes` (`id`, `nome`, `end`, `fone`, `status`) VALUES
+(1, 'CLAMED', 'End. ficticio ', '879999999', 1);
+
+
+-- Despejando dados para a tabela `distribuidoras_distribuidoras`
+--
+
+INSERT INTO `distribuidoras_distribuidoras` (`id`, `nome`, `status`, `cliente_id`) VALUES
+(1, 'Copel', 1, 1),
+(2, 'Celesc', 1, 1);
 
 --
 -- Despejando dados para a tabela `administradores_administradores`
@@ -138,12 +151,6 @@ INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `userna
 -- --------------------------------------------------------
 
 
---
--- Despejando dados para a tabela `clientes_clientes`
---
-
-INSERT INTO `clientes_clientes` (`id`, `nome`, `end`, `fone`, `status`) VALUES
-(1, 'CLAMED', 'End. ficticio ', '879999999', 1);
 
 -- --------------------------------------------------------
 
@@ -691,12 +698,6 @@ INSERT INTO `consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id
 -- --------------------------------------------------------
 
 --
--- Despejando dados para a tabela `distribuidoras_distribuidoras`
---
-
-INSERT INTO `distribuidoras_distribuidoras` (`id`, `nome`, `status`, `cliente_id`) VALUES
-(1, 'Copel', 1, 1),
-(2, 'Celesc', 1, 1);
 
 -- --------------------------------------------------------
 
