@@ -2,7 +2,7 @@ from pathlib import Path
 import locale
 import os
 
-locale.setlocale(locale.LC_ALL,"pt_BR.UTF-8")
+locale.setlocale(locale.LC_ALL,"en_US.UTF-8")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
