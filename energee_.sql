@@ -3420,10 +3420,10 @@ INSERT INTO `Relatorios_azul_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_
 -- --------------------------------------------------------
 
 --
--- Despejando dados para a tabela `relatorios_consumidor`
+-- Despejando dados para a tabela `Relatorios_consumidor`
 --
 
-INSERT INTO `relatorios_consumidor` (`id`, `identificacao`, `uc`, `valor`, `referencia`, `qtdmptte`, `precomptte`, `valormptte`, `qtdmpttusd`, `precompttusd`, `valormpttusd`, `qtdconsumo`, `precoconsumo`, `valorconsumo`, `qtduss`, `precouss`, `valoruss`, `qtdilupubli`, `precoilupubli`, `valorilupubli`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_consumidor` (`id`, `identificacao`, `uc`, `valor`, `referencia`, `qtdmptte`, `precomptte`, `valormptte`, `qtdmpttusd`, `precompttusd`, `valormpttusd`, `qtdconsumo`, `precoconsumo`, `valorconsumo`, `qtduss`, `precouss`, `valoruss`, `qtdilupubli`, `precoilupubli`, `valorilupubli`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (1, '0', '0', '0', '012019', '0', '0', '0', '0', '0', '0', '226604', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
 (2, '0', '0', '0', '022019', '0', '0', '0', '0', '0', '0', '227416', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
 (3, '0', '0', '0', '032019', '0', '0', '0', '0', '0', '0', '178226', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1),
@@ -3480,10 +3480,10 @@ INSERT INTO `relatorios_consumidor` (`id`, `identificacao`, `uc`, `valor`, `refe
 -- --------------------------------------------------------
 
 --
--- Despejando dados para a tabela `relatorios_consumidor_celesc`
+-- Despejando dados para a tabela `Relatorios_consumidor_celesc`
 --
 
-INSERT INTO `relatorios_consumidor_celesc` (`id`, `uc`, `referencia`, `MptTEQtd`, `MptTEValor`, `MptTUSDValor`, `MptQtd`, `MptValor`, `OptTEQtd`, `OptTEValor`, `OptTUSDValor`, `OptQtd`, `OptValor`, `PtMptTEQtd`, `PtMptTUSDQtd`, `PtMptTUSDValor`, `PtMptValor`, `FpMptTEValor`, `FpMptTUSDValor`, `FpMptValor`, `status`, `admin_id`, `cliente_id`, `distribuidora_id`, `PtMptTEValor`) VALUES
+INSERT INTO `Relatorios_consumidor_celesc` (`id`, `uc`, `referencia`, `MptTEQtd`, `MptTEValor`, `MptTUSDValor`, `MptQtd`, `MptValor`, `OptTEQtd`, `OptTEValor`, `OptTUSDValor`, `OptQtd`, `OptValor`, `PtMptTEQtd`, `PtMptTUSDQtd`, `PtMptTUSDValor`, `PtMptValor`, `FpMptTEValor`, `FpMptTUSDValor`, `FpMptValor`, `status`, `admin_id`, `cliente_id`, `distribuidora_id`, `PtMptTEValor`) VALUES
 (2, '0', '072018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 2, '2'),
 (3, '0', '082018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 2, '2'),
 (4, '0', '092018', '18060', '18640', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 2, '2'),
@@ -3546,10 +3546,10 @@ INSERT INTO `relatorios_consumidor_celesc` (`id`, `uc`, `referencia`, `MptTEQtd`
 -- --------------------------------------------------------
 
 --
--- Despejando dados para a tabela `relatorios_gerador`
+-- Despejando dados para a tabela `Relatorios_gerador`
 --
 
-INSERT INTO `relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`, `up`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
+INSERT INTO `Relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`, `up`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
 (2, '103710124', '177.28', '072019', '0', '0', '6329', '660', '0', '0', '0', '6329', 1, 1, 1, 1, 0, 0, '0', 15, 12),
 (3, '103710124', '199.75', '082019', '0', '0', '7600', '860', '0', '0', '0', '8700', 1, 1, 1, 1, 0, 0, '0', 15, 12),
 (4, '103710124', '133.97', '092019', '0', '0', '37468', '140', '0', '0', '0', '37571', 1, 1, 1, 1, 0, 0, '0', 15, 12),
@@ -3990,7 +3990,7 @@ INSERT INTO `relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Ante
 (448, '9790799', '0', '062021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 7.08 ', 15, 12),
 (449, '9790799', '0', '072021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 7.59 ', 15, 12),
 (450, '9790799', '0', '082021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 7.99 ', 15, 12);
-INSERT INTO `relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`, `up`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
+INSERT INTO `Relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_Ativa`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `admin_id`, `distribuidora_id`, `cliente_id`, `up`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
 (451, '9790799', '0', '092021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 8.97 ', 15, 12),
 (452, '9790799', '0', '102021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 10.49 ', 15, 12),
 (453, '9790799', '0', '112021', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 1, 1, 0, 0, '0 10.38 ', 15, 12),
@@ -4355,10 +4355,10 @@ INSERT INTO `relatorios_gerador` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Ante
 -- --------------------------------------------------------
 
 --
--- Despejando dados para a tabela `relatorios_gerador_celesc`
+-- Despejando dados para a tabela `Relatorios_gerador_celesc`
 --
 
-INSERT INTO `relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
+INSERT INTO `Relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
 (6, '48966365', '45.63', '072018', '0', '0', '20552', '0', '0', '0', '0', '0', '0', '20552', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (7, '48966365', '45.05', '082018', '0', '0', '63867', '0', '0', '0', '0', '0', '0', '84419', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (8, '48966365', '49.3', '092018', '0', '0', '38020', '0', '0', '0', '0', '0', '0', '84939', 1, 0, 1, 1, 2, 0, '0', 13, 20),
@@ -4771,7 +4771,7 @@ INSERT INTO `relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Sal
 (422, '52496373', '0', '102018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (423, '52496373', '0', '112018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (424, '52496373', '0', '122018', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20);
-INSERT INTO `relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
+INSERT INTO `Relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Saldo_Anterior`, `Cred_Receb`, `Energia_Injetada`, `Energia_InjetadaFP`, `Energia_Ativa`, `Energia_AtivaFP`, `Credito_Utilizado`, `Saldo_Mes`, `Saldo_Transferido`, `Saldo_Final`, `status`, `up`, `admin_id`, `cliente_id`, `distribuidora_id`, `liberado`, `Imposto`, `descontoCliente`, `descontoGestao`) VALUES
 (425, '52496373', '0', '012019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (426, '52496373', '0', '022019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20),
 (427, '52496373', '0', '032019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 0, 1, 1, 2, 0, '0', 13, 20),
@@ -6516,36 +6516,36 @@ ALTER TABLE `Relatorios_azul_celesc`
   ADD KEY `Relatorios_azul_cele_distribuidora_id_79926fc9_fk_Distribui` (`distribuidora_id`);
 
 --
--- Índices de tabela `relatorios_consumidor`
+-- Índices de tabela `Relatorios_consumidor`
 --
-ALTER TABLE `relatorios_consumidor`
+ALTER TABLE `Relatorios_consumidor`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Relatorios_consumido_admin_id_f35223e5_fk_Administr` (`admin_id`),
   ADD KEY `Relatorios_consumido_distribuidora_id_6008190f_fk_Distribui` (`distribuidora_id`),
   ADD KEY `Relatorios_consumido_cliente_id_059932f4_fk_Clientes_` (`cliente_id`);
 
 --
--- Índices de tabela `relatorios_consumidor_celesc`
+-- Índices de tabela `Relatorios_consumidor_celesc`
 --
-ALTER TABLE `relatorios_consumidor_celesc`
+ALTER TABLE `Relatorios_consumidor_celesc`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Relatorios_consumido_admin_id_7924db34_fk_Administr` (`admin_id`),
   ADD KEY `Relatorios_consumido_cliente_id_7e48b98e_fk_Clientes_` (`cliente_id`),
   ADD KEY `Relatorios_consumido_distribuidora_id_403bd685_fk_Distribui` (`distribuidora_id`);
 
 --
--- Índices de tabela `relatorios_gerador`
+-- Índices de tabela `Relatorios_gerador`
 --
-ALTER TABLE `relatorios_gerador`
+ALTER TABLE `Relatorios_gerador`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Relatorios_gerador_admin_id_df0ae156_fk_Administr` (`admin_id`),
   ADD KEY `Relatorios_gerador_distribuidora_id_c776fe37_fk_Distribui` (`distribuidora_id`),
   ADD KEY `Relatorios_gerador_cliente_id_03ab5584_fk_Clientes_clientes_id` (`cliente_id`);
 
 --
--- Índices de tabela `relatorios_gerador_celesc`
+-- Índices de tabela `Relatorios_gerador_celesc`
 --
-ALTER TABLE `relatorios_gerador_celesc`
+ALTER TABLE `Relatorios_gerador_celesc`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Relatorios_gerador_c_admin_id_f258c828_fk_Administr` (`admin_id`),
   ADD KEY `Relatorios_gerador_c_cliente_id_a4e1618b_fk_Clientes_` (`cliente_id`),
@@ -6679,27 +6679,27 @@ ALTER TABLE `Relatorios_azul_celesc`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT de tabela `relatorios_consumidor`
+-- AUTO_INCREMENT de tabela `Relatorios_consumidor`
 --
-ALTER TABLE `relatorios_consumidor`
+ALTER TABLE `Relatorios_consumidor`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT de tabela `relatorios_consumidor_celesc`
+-- AUTO_INCREMENT de tabela `Relatorios_consumidor_celesc`
 --
-ALTER TABLE `relatorios_consumidor_celesc`
+ALTER TABLE `Relatorios_consumidor_celesc`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT de tabela `relatorios_gerador`
+-- AUTO_INCREMENT de tabela `Relatorios_gerador`
 --
-ALTER TABLE `relatorios_gerador`
+ALTER TABLE `Relatorios_gerador`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=818;
 
 --
--- AUTO_INCREMENT de tabela `relatorios_gerador_celesc`
+-- AUTO_INCREMENT de tabela `Relatorios_gerador_celesc`
 --
-ALTER TABLE `relatorios_gerador_celesc`
+ALTER TABLE `Relatorios_gerador_celesc`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=545;
 
 --
@@ -6808,33 +6808,33 @@ ALTER TABLE `Relatorios_azul_celesc`
   ADD CONSTRAINT `Relatorios_azul_cele_distribuidora_id_79926fc9_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
--- Restrições para tabelas `relatorios_consumidor`
+-- Restrições para tabelas `Relatorios_consumidor`
 --
-ALTER TABLE `relatorios_consumidor`
+ALTER TABLE `Relatorios_consumidor`
   ADD CONSTRAINT `Relatorios_consumido_admin_id_f35223e5_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
   ADD CONSTRAINT `Relatorios_consumido_cliente_id_059932f4_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
   ADD CONSTRAINT `Relatorios_consumido_distribuidora_id_6008190f_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
--- Restrições para tabelas `relatorios_consumidor_celesc`
+-- Restrições para tabelas `Relatorios_consumidor_celesc`
 --
-ALTER TABLE `relatorios_consumidor_celesc`
+ALTER TABLE `Relatorios_consumidor_celesc`
   ADD CONSTRAINT `Relatorios_consumido_admin_id_7924db34_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
   ADD CONSTRAINT `Relatorios_consumido_cliente_id_7e48b98e_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
   ADD CONSTRAINT `Relatorios_consumido_distribuidora_id_403bd685_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
--- Restrições para tabelas `relatorios_gerador`
+-- Restrições para tabelas `Relatorios_gerador`
 --
-ALTER TABLE `relatorios_gerador`
+ALTER TABLE `Relatorios_gerador`
   ADD CONSTRAINT `Relatorios_gerador_admin_id_df0ae156_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
   ADD CONSTRAINT `Relatorios_gerador_cliente_id_03ab5584_fk_Clientes_clientes_id` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
   ADD CONSTRAINT `Relatorios_gerador_distribuidora_id_c776fe37_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
--- Restrições para tabelas `relatorios_gerador_celesc`
+-- Restrições para tabelas `Relatorios_gerador_celesc`
 --
-ALTER TABLE `relatorios_gerador_celesc`
+ALTER TABLE `Relatorios_gerador_celesc`
   ADD CONSTRAINT `Relatorios_gerador_c_admin_id_f258c828_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
   ADD CONSTRAINT `Relatorios_gerador_c_cliente_id_a4e1618b_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
   ADD CONSTRAINT `Relatorios_gerador_c_distribuidora_id_9f2e0da3_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
