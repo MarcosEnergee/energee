@@ -5,12 +5,12 @@ class Relatorio:
     #---------------Dashboard------------------------------------------
     def ContaGeradores(self,adm):
         geradores = {}
-        query = f' SELECT count(*) FROM `geradores_geradores` WHERE admin_id={adm} '
+        query = f' SELECT count(*) FROM `Geradores_geradores` WHERE admin_id={adm} '
         cursor = connection.cursor()
         cursor.execute(query)
         geradores['total'] = cursor.fetchall()[0][0]
 
-        query = f' SELECT count(*) FROM `geradores_geradores` WHERE admin_id={adm} AND distribuidora_id=1 '
+        query = f' SELECT count(*) FROM `Geradores_geradores` WHERE admin_id={adm} AND distribuidora_id=1 '
         cursor = connection.cursor()
         cursor.execute(query)
         geradores['copel'] = cursor.fetchall()[0][0]
@@ -21,12 +21,12 @@ class Relatorio:
     
     def ContaConsumidores(self,adm):
         consumidores = {}
-        query = f' SELECT count(*) FROM `consumidores_consumidores` WHERE admin_id={adm} '
+        query = f' SELECT count(*) FROM `Consumidores_consumidores` WHERE admin_id={adm} '
         cursor = connection.cursor()
         cursor.execute(query)
         consumidores['total'] = cursor.fetchall()[0][0]
 
-        query = f' SELECT count(*) FROM `consumidores_consumidores` WHERE admin_id={adm} AND distribuidora_id=1 '
+        query = f' SELECT count(*) FROM `Consumidores_consumidores` WHERE admin_id={adm} AND distribuidora_id=1 '
         cursor = connection.cursor()
         cursor.execute(query)
         consumidores['copel'] = cursor.fetchall()[0][0]
@@ -169,7 +169,7 @@ class Relatorio:
 
     def NomesGeradores(self,dist):
         
-        query = f' SELECT nome FROM `geradores_geradores` WHERE distribuidora_id={dist} '
+        query = f' SELECT nome FROM `Geradores_geradores` WHERE distribuidora_id={dist} '
         cursor = connection.cursor()
         cursor.execute(query)
         resultado = cursor.fetchall()
@@ -454,7 +454,7 @@ class Relatorio:
 
     def ucsSelect(self,cli=None,dist=None):
         lista=[]
-        query = f' SELECT * FROM geradores_geradores '
+        query = f' SELECT * FROM Geradores_geradores '
 
         if cli !=None:
             query += f' WHERE cliente_id= {cli} '
@@ -474,7 +474,7 @@ class Relatorio:
   
     def ucs(self,cli=None):
         lista=[]
-        query = f' SELECT uc FROM geradores_geradores '
+        query = f' SELECT uc FROM Geradores_geradores '
         query += f' WHERE distribuidora_id=1 '
         if cli !=None:
             query += f' AND cliente_id= {cli} '
@@ -491,7 +491,7 @@ class Relatorio:
     
     def ucs_Celesc(self,cli=None):
         lista=[]
-        query = f' SELECT uc FROM geradores_geradores '
+        query = f' SELECT uc FROM Geradores_geradores '
         query += f' WHERE distribuidora_id=2 '
         if cli !=None:
             query += f' AND cliente_id= {cli} '
@@ -732,7 +732,7 @@ class Relatorio:
     def valorGerador(self,referencia, cli, uc=None):
         dic = {} 
 
-        query = 'SELECT * FROM relatorios_gerador as r JOIN geradores_geradores AS g   ON r.uc = g.uc'
+        query = 'SELECT * FROM relatorios_gerador as r JOIN Geradores_geradores AS g   ON r.uc = g.uc'
         query += f' WHERE r.Referencia= {referencia}'
         query += f' AND r.cliente_id= {cli}'
 
@@ -1187,7 +1187,7 @@ class Relatorio:
         return dic
 
     def SelectDist(self,cli):
-        query = f'SELECT * FROM distribuidoras_distribuidoras WHERE cliente_id = {cli}'
+        query = f'SELECT * FROM Distribuidoras_distribuidoras WHERE cliente_id = {cli}'
         cursor = connection.cursor()
         cursor.execute(query)
 
@@ -3955,7 +3955,7 @@ class Relatorio:
     def valorGerador_Celesc(self,referencia, cli, uc=None):
         dic = {} 
 
-        query = 'SELECT * FROM relatorios_gerador_celesc as r JOIN geradores_geradores AS g   ON r.uc = g.uc'
+        query = 'SELECT * FROM relatorios_gerador_celesc as r JOIN Geradores_geradores AS g   ON r.uc = g.uc'
         query += f' WHERE r.Referencia= {referencia}'
         query += f' AND r.cliente_id= {cli}'
 
