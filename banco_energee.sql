@@ -67,7 +67,7 @@ INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `userna
 -- Despejando dados para a tabela `consumidores_consumidores`
 --
 
-INSERT INTO `consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id`, `cliente_id`, `distribuidora_id`, `gerador_id`) VALUES
+INSERT INTO `Consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id`, `cliente_id`, `distribuidora_id`, `gerador_id`) VALUES
 (1, 'DC ITAJAÍ I', '726478', 1, 1, 1, 2, 4),
 (2, 'DC FPOLIS VITÓRIA', '27227', 0, 1, 1, 2, 4),
 (3, 'DC FPOLIS VITÓRIA', '27235', 1, 1, 1, 2, 4),
