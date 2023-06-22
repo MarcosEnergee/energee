@@ -1,32 +1,17 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
+
+-- Despejando dados para a tabela `distribuidoras_distribuidoras`
 --
--- Host: 127.0.0.1
--- Tempo de geração: 22/06/2023 às 02:32
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.0.28
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+INSERT INTO `distribuidoras_distribuidoras` (`id`, `nome`, `status`, `cliente_id`) VALUES
+(1, 'Copel', 1, 1),
+(2, 'Celesc', 1, 1);
 
 --
--- Banco de dados: `energee`
+-- Despejando dados para a tabela `administradores_administradores`
 --
+
+INSERT INTO `administradores_administradores` (`id`, `nome`, `end`, `fone`, `distribuidora_id`, `senha`, `uc`) VALUES
+(1, 'Marcos', 'end ficticio tv.44', '897577899', 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', '84683481000177'),
+(2, 'ENCANTO', 'nao cadastrado', '999999999', 2, '1234', '84683481000177');
 
 -- --------------------------------------------------------
---
--- Despejando dados para a tabela `clientes_clientes`
---
-
-INSERT INTO `clientes_clientes` (`id`, `nome`, `end`, `fone`, `status`) VALUES
-(1, 'CLAMED', 'End. ficticio ', '879999999', 1);
-
-
