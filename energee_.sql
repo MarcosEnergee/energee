@@ -23,135 +23,30 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
-
---
--- Despejando dados para a tabela `administradores_administradores`
+-- Despejando dados para a tabela `Clientes_clientes`
 --
 
-INSERT INTO `administradores_administradores` (`id`, `nome`, `end`, `fone`, `distribuidora_id`, `senha`, `uc`) VALUES
+INSERT INTO `Clientes_clientes` (`id`, `nome`, `end`, `fone`, `status`) VALUES
+(1, 'CLAMED', 'End. ficticio ', '879999999', 1);
+--
+-- Despejando dados para a tabela `Administradores_administradores`
+--
+
+INSERT INTO `Administradores_administradores` (`id`, `nome`, `end`, `fone`, `distribuidora_id`, `senha`, `uc`) VALUES
 (1, 'Marcos', 'end ficticio tv.44', '897577899', 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', '84683481000177'),
 (2, 'ENCANTO', 'nao cadastrado', '999999999', 2, '1234', '84683481000177');
 
 -- --------------------------------------------------------
 
---
--- Despejando dados para a tabela `auth_permission`
---
-
-INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALUES
-(1, 'Can add log entry', 1, 'add_logentry'),
-(2, 'Can change log entry', 1, 'change_logentry'),
-(3, 'Can delete log entry', 1, 'delete_logentry'),
-(4, 'Can view log entry', 1, 'view_logentry'),
-(5, 'Can add permission', 2, 'add_permission'),
-(6, 'Can change permission', 2, 'change_permission'),
-(7, 'Can delete permission', 2, 'delete_permission'),
-(8, 'Can view permission', 2, 'view_permission'),
-(9, 'Can add group', 3, 'add_group'),
-(10, 'Can change group', 3, 'change_group'),
-(11, 'Can delete group', 3, 'delete_group'),
-(12, 'Can view group', 3, 'view_group'),
-(13, 'Can add user', 4, 'add_user'),
-(14, 'Can change user', 4, 'change_user'),
-(15, 'Can delete user', 4, 'delete_user'),
-(16, 'Can view user', 4, 'view_user'),
-(17, 'Can add content type', 5, 'add_contenttype'),
-(18, 'Can change content type', 5, 'change_contenttype'),
-(19, 'Can delete content type', 5, 'delete_contenttype'),
-(20, 'Can view content type', 5, 'view_contenttype'),
-(21, 'Can add session', 6, 'add_session'),
-(22, 'Can change session', 6, 'change_session'),
-(23, 'Can delete session', 6, 'delete_session'),
-(24, 'Can view session', 6, 'view_session'),
-(25, 'Can add geradores', 7, 'add_geradores'),
-(26, 'Can change geradores', 7, 'change_geradores'),
-(27, 'Can delete geradores', 7, 'delete_geradores'),
-(28, 'Can view geradores', 7, 'view_geradores'),
-(29, 'Can add consumidores', 8, 'add_consumidores'),
-(30, 'Can change consumidores', 8, 'change_consumidores'),
-(31, 'Can delete consumidores', 8, 'delete_consumidores'),
-(32, 'Can view consumidores', 8, 'view_consumidores'),
-(33, 'Can add distribuidoras', 9, 'add_distribuidoras'),
-(34, 'Can change distribuidoras', 9, 'change_distribuidoras'),
-(35, 'Can delete distribuidoras', 9, 'delete_distribuidoras'),
-(36, 'Can view distribuidoras', 9, 'view_distribuidoras'),
-(37, 'Can add administradores', 10, 'add_administradores'),
-(38, 'Can change administradores', 10, 'change_administradores'),
-(39, 'Can delete administradores', 10, 'delete_administradores'),
-(40, 'Can view administradores', 10, 'view_administradores'),
-(41, 'Can add gerador', 11, 'add_gerador'),
-(42, 'Can change gerador', 11, 'change_gerador'),
-(43, 'Can delete gerador', 11, 'delete_gerador'),
-(44, 'Can view gerador', 11, 'view_gerador'),
-(45, 'Can add consumidor', 12, 'add_consumidor'),
-(46, 'Can change consumidor', 12, 'change_consumidor'),
-(47, 'Can delete consumidor', 12, 'delete_consumidor'),
-(48, 'Can view consumidor', 12, 'view_consumidor'),
-(49, 'Can add azul', 13, 'add_azul'),
-(50, 'Can change azul', 13, 'change_azul'),
-(51, 'Can delete azul', 13, 'delete_azul'),
-(52, 'Can view azul', 13, 'view_azul'),
-(53, 'Can add armazenamento total', 14, 'add_armazenamentototal'),
-(54, 'Can change armazenamento total', 14, 'change_armazenamentototal'),
-(55, 'Can delete armazenamento total', 14, 'delete_armazenamentototal'),
-(56, 'Can view armazenamento total', 14, 'view_armazenamentototal'),
-(57, 'Can add armazenamento mensal', 15, 'add_armazenamentomensal'),
-(58, 'Can change armazenamento mensal', 15, 'change_armazenamentomensal'),
-(59, 'Can delete armazenamento mensal', 15, 'delete_armazenamentomensal'),
-(60, 'Can view armazenamento mensal', 15, 'view_armazenamentomensal'),
-(61, 'Can add document', 16, 'add_document'),
-(62, 'Can change document', 16, 'change_document'),
-(63, 'Can delete document', 16, 'delete_document'),
-(64, 'Can view document', 16, 'view_document'),
-(65, 'Can add clientes', 17, 'add_clientes'),
-(66, 'Can change clientes', 17, 'change_clientes'),
-(67, 'Can delete clientes', 17, 'delete_clientes'),
-(68, 'Can view clientes', 17, 'view_clientes'),
-(69, 'Can add consumidor_ celesc', 18, 'add_consumidor_celesc'),
-(70, 'Can change consumidor_ celesc', 18, 'change_consumidor_celesc'),
-(71, 'Can delete consumidor_ celesc', 18, 'delete_consumidor_celesc'),
-(72, 'Can view consumidor_ celesc', 18, 'view_consumidor_celesc'),
-(73, 'Can add gerador_ celesc', 19, 'add_gerador_celesc'),
-(74, 'Can change gerador_ celesc', 19, 'change_gerador_celesc'),
-(75, 'Can delete gerador_ celesc', 19, 'delete_gerador_celesc'),
-(76, 'Can view gerador_ celesc', 19, 'view_gerador_celesc'),
-(77, 'Can add azul_ celesc', 20, 'add_azul_celesc'),
-(78, 'Can change azul_ celesc', 20, 'change_azul_celesc'),
-(79, 'Can delete azul_ celesc', 20, 'delete_azul_celesc'),
-(80, 'Can view azul_ celesc', 20, 'view_azul_celesc'),
-(81, 'Can add historico', 21, 'add_historico'),
-(82, 'Can change historico', 21, 'change_historico'),
-(83, 'Can delete historico', 21, 'delete_historico'),
-(84, 'Can view historico', 21, 'view_historico');
-
--- --------------------------------------------------------
-
---
--- Despejando dados para a tabela `auth_user`
---
-
-INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$390000$JxynAJo4CjaHX8ocWTBrwA$eJ7Moqr1x9Q3iyAGGK1ylKNweFzw1gO0j11U/9DQLqM=', '2023-03-27 13:51:14.296669', 1, 'MarcosEnergee', '', '', '', 1, 1, '2023-03-12 20:03:34.751470'),
-(2, 'pbkdf2_sha256$390000$JLIdUE6UHSR8ZMjgMj8nIv$XJ0kJKdGE9WTKP/Q0Vg5QfcOI3R5aTlE/k3J2FtIM1U=', '2023-06-06 04:14:36.646822', 1, 'Energee', '', '', '', 1, 1, '2023-06-06 04:14:13.772276');
 
 
 -- --------------------------------------------------------
 
-
 --
--- Despejando dados para a tabela `clientes_clientes`
---
-
-INSERT INTO `clientes_clientes` (`id`, `nome`, `end`, `fone`, `status`) VALUES
-(1, 'CLAMED', 'End. ficticio ', '879999999', 1);
-
--- --------------------------------------------------------
-
---
--- Despejando dados para a tabela `consumidores_consumidores`
+-- Despejando dados para a tabela `Consumidores_consumidores`
 --
 
-INSERT INTO `consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id`, `cliente_id`, `distribuidora_id`, `gerador_id`) VALUES
+INSERT INTO `Consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id`, `cliente_id`, `distribuidora_id`, `gerador_id`) VALUES
 (1, 'DC ITAJAÍ I', '726478', 1, 1, 1, 2, 4),
 (2, 'DC FPOLIS VITÓRIA', '27227', 0, 1, 1, 2, 4),
 (3, 'DC FPOLIS VITÓRIA', '27235', 1, 1, 1, 2, 4),
@@ -691,246 +586,20 @@ INSERT INTO `consumidores_consumidores` (`id`, `nome`, `uc`, `status`, `admin_id
 -- --------------------------------------------------------
 
 --
--- Despejando dados para a tabela `distribuidoras_distribuidoras`
+-- Despejando dados para a tabela `Distribuidoras_distribuidoras`
 --
 
-INSERT INTO `distribuidoras_distribuidoras` (`id`, `nome`, `status`, `cliente_id`) VALUES
+INSERT INTO `Distribuidoras_distribuidoras` (`id`, `nome`, `status`, `cliente_id`) VALUES
 (1, 'Copel', 1, 1),
 (2, 'Celesc', 1, 1);
 
 -- --------------------------------------------------------
 
--- Despejando dados para a tabela `django_admin_log`
+
+-- Despejando dados para a tabela `Geradores_geradores`
 --
 
-INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`, `action_flag`, `change_message`, `content_type_id`, `user_id`) VALUES
-(1, '2023-03-14 17:29:12.615159', '43', 'DALTON', 2, '[{\"changed\": {\"fields\": [\"Admin\"]}}]', 7, 1),
-(2, '2023-03-14 23:16:39.467657', '46', 'teste novo', 3, '', 7, 1),
-(3, '2023-03-14 23:16:46.019719', '45', 'teste agora', 3, '', 7, 1),
-(4, '2023-03-14 23:16:51.259459', '44', 'teste', 3, '', 7, 1),
-(5, '2023-03-16 12:59:54.005349', '47', 'teste', 3, '', 7, 1),
-(6, '2023-03-18 13:59:12.801491', '43', 'DALTON', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(7, '2023-03-18 13:59:26.201314', '42', 'PAULO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(8, '2023-03-18 13:59:37.585466', '41', 'AND. 2', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(9, '2023-03-18 13:59:47.841251', '40', 'AND. 1', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(10, '2023-03-18 14:00:04.057528', '39', 'EDUARDO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(11, '2023-03-18 14:00:14.945044', '38', 'THALES', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(12, '2023-03-18 14:00:24.176947', '37', 'CASSOL', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(13, '2023-03-18 14:00:34.016737', '36', 'DOUGLAS', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(14, '2023-03-18 14:00:43.888701', '35', 'BONATTO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(15, '2023-03-18 14:00:53.624779', '34', 'FRANCISCO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(16, '2023-03-18 14:01:03.920883', '33', 'NETTSON', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(17, '2023-03-18 14:01:14.992618', '32', 'ROGERIO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(18, '2023-03-18 14:01:26.320471', '32', 'ROGERIO', 2, '[]', 7, 1),
-(19, '2023-03-18 14:01:36.568170', '31', 'ROSSETO', 2, '[{\"changed\": {\"fields\": [\"Admin\", \"Senha\"]}}]', 7, 1),
-(20, '2023-03-18 14:01:48.796051', '30', 'Felipe Mott', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(21, '2023-03-18 14:01:58.680347', '29', 'Vilmar', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(22, '2023-03-18 14:02:05.377266', '28', 'Edson', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(23, '2023-03-18 14:02:12.272813', '27', 'Jaciel', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(24, '2023-03-18 14:02:20.352313', '26', 'Solar 3', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(25, '2023-03-18 14:02:28.960128', '25', 'Solar 2', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(26, '2023-03-18 14:02:36.232479', '24', 'Solar 1', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(27, '2023-03-18 14:02:43.304208', '23', 'Scania', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(28, '2023-03-18 14:02:50.679975', '22', 'MWM', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(29, '2023-03-18 14:02:57.712795', '19', 'JAIR', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(30, '2023-03-18 14:03:03.935855', '18', 'KASPER', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(31, '2023-03-18 14:03:10.615828', '6', 'KHOLER 2', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1),
-(32, '2023-03-18 14:03:17.796882', '4', 'KHOLER 1', 2, '[{\"changed\": {\"fields\": [\"Senha\"]}}]', 7, 1);
-
--- --------------------------------------------------------
-
---
--- Despejando dados para a tabela `django_content_type`
---
-
-INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
-(1, 'admin', 'logentry'),
-(10, 'Administradores', 'administradores'),
-(3, 'auth', 'group'),
-(2, 'auth', 'permission'),
-(4, 'auth', 'user'),
-(17, 'Clientes', 'clientes'),
-(8, 'Consumidores', 'consumidores'),
-(5, 'contenttypes', 'contenttype'),
-(9, 'Distribuidoras', 'distribuidoras'),
-(16, 'Extracao', 'document'),
-(7, 'Geradores', 'geradores'),
-(15, 'Relatorios', 'armazenamentomensal'),
-(14, 'Relatorios', 'armazenamentototal'),
-(13, 'Relatorios', 'azul'),
-(20, 'Relatorios', 'azul_celesc'),
-(12, 'Relatorios', 'consumidor'),
-(18, 'Relatorios', 'consumidor_celesc'),
-(11, 'Relatorios', 'gerador'),
-(19, 'Relatorios', 'gerador_celesc'),
-(21, 'Relatorios', 'historico'),
-(6, 'sessions', 'session');
-
--- --------------------------------------------------------
-
-
---
--- Despejando dados para a tabela `django_migrations`
---
-
-INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
-(1, 'Distribuidoras', '0001_initial', '2023-02-04 17:55:49.164676'),
-(2, 'Administradores', '0001_initial', '2023-02-04 17:55:49.459844'),
-(3, 'Clientes', '0001_initial', '2023-02-04 17:55:49.599228'),
-(4, 'Clientes', '0002_clientes_status', '2023-02-04 17:55:49.639871'),
-(5, 'Geradores', '0001_initial', '2023-02-04 17:55:49.694032'),
-(6, 'Geradores', '0002_geradores_distribuidora', '2023-02-04 17:55:49.790021'),
-(7, 'Geradores', '0003_geradores_admin', '2023-02-04 17:55:49.942188'),
-(8, 'Geradores', '0004_geradores_descontocliente_geradores_descontogestao', '2023-02-04 17:55:50.036133'),
-(9, 'Geradores', '0005_geradores_cliente', '2023-02-04 17:55:50.124123'),
-(10, 'Consumidores', '0001_initial', '2023-02-04 17:55:50.447427'),
-(11, 'Extracao', '0001_initial', '2023-02-04 17:55:50.477733'),
-(12, 'Extracao', '0002_rename_documentconsumidor_document', '2023-02-04 17:55:50.533725'),
-(13, 'Relatorios', '0001_initial', '2023-02-04 17:55:51.471651'),
-(14, 'Relatorios', '0002_armazenamentomensal', '2023-02-04 17:55:51.611328'),
-(15, 'contenttypes', '0001_initial', '2023-02-04 17:55:51.680193'),
-(16, 'auth', '0001_initial', '2023-02-04 17:55:52.507040'),
-(17, 'admin', '0001_initial', '2023-02-04 17:55:52.705962'),
-(18, 'admin', '0002_logentry_remove_auto_add', '2023-02-04 17:55:52.752563'),
-(19, 'admin', '0003_logentry_add_action_flag_choices', '2023-02-04 17:55:52.808548'),
-(20, 'contenttypes', '0002_remove_content_type_name', '2023-02-04 17:55:53.193016'),
-(21, 'auth', '0002_alter_permission_name_max_length', '2023-02-04 17:55:53.326356'),
-(22, 'auth', '0003_alter_user_email_max_length', '2023-02-04 17:55:53.460951'),
-(23, 'auth', '0004_alter_user_username_opts', '2023-02-04 17:55:53.492951'),
-(24, 'auth', '0005_alter_user_last_login_null', '2023-02-04 17:55:53.604938'),
-(25, 'auth', '0006_require_contenttypes_0002', '2023-02-04 17:55:53.620936'),
-(26, 'auth', '0007_alter_validators_add_error_messages', '2023-02-04 17:55:53.700930'),
-(27, 'auth', '0008_alter_user_username_max_length', '2023-02-04 17:55:53.780920'),
-(28, 'auth', '0009_alter_user_last_name_max_length', '2023-02-04 17:55:53.836918'),
-(29, 'auth', '0010_alter_group_name_max_length', '2023-02-04 17:55:53.948905'),
-(30, 'auth', '0011_update_proxy_permissions', '2023-02-04 17:55:54.020899'),
-(31, 'auth', '0012_alter_user_first_name_max_length', '2023-02-04 17:55:54.077099'),
-(32, 'sessions', '0001_initial', '2023-02-04 17:55:54.149093'),
-(33, 'Relatorios', '0003_gerador_cliente', '2023-02-04 23:30:40.013225'),
-(34, 'Relatorios', '0004_azul_cliente', '2023-02-05 00:07:01.283832'),
-(35, 'Relatorios', '0005_consumidor_cliente', '2023-02-05 00:07:02.350536'),
-(36, 'Relatorios', '0006_armazenamentomensal_cliente_and_more', '2023-02-08 13:28:05.511890'),
-(37, 'Relatorios', '0007_consumidor_update', '2023-02-09 21:30:17.674515'),
-(38, 'Relatorios', '0008_rename_update_consumidor_up', '2023-02-09 22:15:50.617485'),
-(39, 'Relatorios', '0009_remove_consumidor_up_gerador_up', '2023-02-09 23:26:29.045061'),
-(40, 'Relatorios', '0010_consumidor_celesc', '2023-02-23 01:16:50.032076'),
-(41, 'Relatorios', '0011_gerador_celesc', '2023-02-23 01:54:07.784548'),
-(42, 'Clientes', '0003_remove_clientes_distribuidora', '2023-02-23 22:01:42.512763'),
-(43, 'Distribuidoras', '0002_distribuidoras_cliente', '2023-02-23 22:01:42.948507'),
-(44, 'Relatorios', '0012_azul_celesc', '2023-02-26 22:01:13.769429'),
-(45, 'Geradores', '0006_geradores_senha', '2023-03-14 15:15:20.985839'),
-(46, 'Geradores', '0007_alter_geradores_senha', '2023-03-14 23:16:24.158492'),
-(47, 'Administradores', '0002_administradores_senha', '2023-03-15 14:04:30.656081'),
-(48, 'Administradores', '0003_administradores_uc', '2023-03-15 14:16:17.335315'),
-(49, 'Relatorios', '0002_gerador_liberado', '2023-03-20 17:24:48.777498'),
-(50, 'Relatorios', '0003_gerador_celesc_liberado', '2023-03-22 14:59:06.968856'),
-(51, 'Relatorios', '0004_gerador_imposto_gerador_celesc_imposto', '2023-06-06 04:09:36.930051'),
-(52, 'Relatorios', '0005_gerador_descontocliente_gerador_descontogestao_and_more', '2023-06-06 04:21:36.407444'),
-(53, 'Geradores', '0008_remove_geradores_descontocliente_and_more', '2023-06-06 15:24:45.374840'),
-(54, 'Relatorios', '0006_alter_gerador_descontocliente_and_more', '2023-06-06 15:24:45.550363'),
-(55, 'Relatorios', '0007_alter_gerador_imposto_alter_gerador_celesc_imposto', '2023-06-08 21:03:00.374533'),
-(56, 'Relatorios', '0008_alter_gerador_imposto_alter_gerador_celesc_imposto', '2023-06-08 21:05:32.803192'),
-(58, 'Relatorios', '0009_historico', '2023-06-18 21:54:43.646617');
-
--- --------------------------------------------------------
-
---
--- Despejando dados para a tabela `django_session`
---
-
-INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('678n6vj6xi7k4gdus1eklwjpdirp3j7e', 'eyJ1c3VhcmlvQWRtaW4iOjEsInVjIjoiODQ2ODM0ODEwMDAxNzciLCJub21lIjoiTWFyY29zIn0:1ppYIz:X7FuLnvvdecFPepEWj1e_T9UYnGjeXBrrJrOP0Fq3uI', '2023-05-04 17:42:49.775294'),
-('gkyeqfr0dv014vlw649mdnfsabta8yfx', 'eyJ1c3VhcmlvQWRtaW4iOjEsInVjIjoiODQ2ODM0ODEwMDAxNzciLCJub21lIjoiTWFyY29zIn0:1pezoy:T4oZrk8SLVyZgIVh_lD-aZs03MwUZ3CA5N5ufQ5ntzU', '2023-04-05 14:52:12.536204'),
-('l9nt7mst9mmrk3xdo6xmmyr8lot7l138', 'eyJ1c3VhcmlvQWRtaW4iOjEsInVjIjoiODQ2ODM0ODEwMDAxNzciLCJub21lIjoiTWFyY29zIn0:1qC6N8:L0Gi9KXliGfxAVwE9TDmyqlTKSdYDAlOgY297OSi_OE', '2023-07-05 22:32:18.426051'),
-('x3nknkx3geecmddsp5wbdqfn875mla53', 'eyJ1c3VhcmlvQWRtaW4iOjEsInVjIjoiODQ2ODM0ODEwMDAxNzciLCJub21lIjoiTWFyY29zIn0:1qAejA:5R_069lhwDy3Up3svsb1Jk-Ita-L5CGabBgnxHYaArs', '2023-07-01 22:49:04.034345');
-
--- --------------------------------------------------------
-
---
--- Despejando dados para a tabela `extracao_document`
---
-
-INSERT INTO `extracao_document` (`id`, `uploadedFile`) VALUES
-(206, 'Upload Files/DemonstrativoMicroMiniGeracao.pdf'),
-(207, 'Upload Files/106473085.pdf'),
-(208, 'Upload Files/106473085.pdf'),
-(209, 'Upload Files/DemonstrativoMicroMiniGeracao_1.pdf'),
-(210, 'Upload Files/DemonstrativoMicroMiniGeracao_1.pdf'),
-(211, 'Upload Files/DemonstrativoMicroMiniGeracao.pdf'),
-(212, 'Upload Files/AG_0335_1.pdf'),
-(213, 'Upload Files/03.2023_-_53903541.pdf'),
-(214, 'Upload Files/03.2023_-_53903541.pdf'),
-(215, 'Upload Files/03.2023_-_52537266.pdf'),
-(216, 'Upload Files/03.2023_1.pdf'),
-(217, 'Upload Files/03.2023_-_48966365.pdf'),
-(218, 'Upload Files/03.2023_-_41973722.pdf'),
-(219, 'Upload Files/03.2023_2.pdf'),
-(220, 'Upload Files/03.2023_-_32205151.pdf'),
-(221, 'Upload Files/03.2023.pdf'),
-(222, 'Upload Files/AGP-032023-2735-00016205990-050420231934.pdf'),
-(223, 'Upload Files/03.2023_-_109876830.pdf'),
-(224, 'Upload Files/03.2023_-_109876830.pdf'),
-(225, 'Upload Files/03.2023_-_109869630.pdf'),
-(226, 'Upload Files/03.2023_-_109869079.pdf'),
-(227, 'Upload Files/03.23_-_109852621.pdf'),
-(228, 'Upload Files/03.2023_-_108983536.pdf'),
-(229, 'Upload Files/03.23_-_108570010.pdf'),
-(230, 'Upload Files/03.2023_-_106473085.pdf'),
-(231, 'Upload Files/03.2023_-_103710124.pdf'),
-(232, 'Upload Files/03.2023_-_99884771.pdf'),
-(233, 'Upload Files/03.2023_-_96070900.pdf'),
-(234, 'Upload Files/03.2023_-_11677058.pdf'),
-(235, 'Upload Files/03.2023_-_80299296.pdf'),
-(236, 'Upload Files/03.2023_-_11151617.pdf'),
-(237, 'Upload Files/03.2023_-_9791329.pdf'),
-(238, 'Upload Files/03.2023_-_9790799.pdf'),
-(239, 'Upload Files/03.2023_-_9057617.pdf'),
-(240, 'Upload Files/03.2023_-_9198750.pdf'),
-(241, 'Upload Files/21909386.pdf'),
-(242, 'Upload Files/21909386.pdf'),
-(243, 'Upload Files/21909386.pdf'),
-(244, 'Upload Files/21909386.pdf'),
-(245, 'Upload Files/21909386.pdf'),
-(246, 'Upload Files/21909386.pdf'),
-(247, 'Upload Files/21909386_d5SJGul.pdf'),
-(248, 'Upload Files/31172756.pdf'),
-(249, 'Upload Files/42944114.pdf'),
-(250, 'Upload Files/52537266.pdf'),
-(251, 'Upload Files/53903541.pdf'),
-(252, 'Upload Files/55524114.pdf'),
-(253, 'Upload Files/52537266.pdf'),
-(254, 'Upload Files/52537266.pdf'),
-(255, 'Upload Files/52537266.pdf'),
-(256, 'Upload Files/52537266.pdf'),
-(257, 'Upload Files/52537266.pdf'),
-(258, 'Upload Files/53903541.pdf'),
-(259, 'Upload Files/53903541.pdf'),
-(260, 'Upload Files/53903541.pdf'),
-(261, 'Upload Files/53903541.pdf'),
-(262, 'Upload Files/53903541.pdf'),
-(263, 'Upload Files/53903541.pdf'),
-(264, 'Upload Files/53903541.pdf'),
-(265, 'Upload Files/53903541.pdf'),
-(266, 'Upload Files/52537266.pdf'),
-(267, 'Upload Files/52537266.pdf'),
-(268, 'Upload Files/52537266.pdf'),
-(269, 'Upload Files/AG_0335.pdf'),
-(270, 'Upload Files/05.2023_-_41973722.pdf'),
-(271, 'Upload Files/AG_0335.pdf'),
-(272, 'Upload Files/AG_0335_iATkqQA.pdf'),
-(273, 'Upload Files/AG_0335.pdf'),
-(274, 'Upload Files/AG_0335.pdf'),
-(275, 'Upload Files/05.2023_-_41973722.pdf'),
-(276, 'Upload Files/05.2023_-_41973722.pdf'),
-(277, 'Upload Files/AGP-052023-2735-00016205990-030620230054.pdf');
-
--- --------------------------------------------------------
-
---
--- Despejando dados para a tabela `geradores_geradores`
---
-
-INSERT INTO `geradores_geradores` (`id`, `nome`, `uc`, `status`, `distribuidora_id`, `admin_id`, `cliente_id`, `senha`) VALUES
+INSERT INTO `Geradores_geradores` (`id`, `nome`, `uc`, `status`, `distribuidora_id`, `admin_id`, `cliente_id`, `senha`) VALUES
 (4, 'KHOLER 1', '103710124', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
 (6, 'KHOLER 2', '9198750', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
 (18, 'KASPER', '11151617', 1, 1, 1, 1, '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'),
@@ -962,10 +631,10 @@ INSERT INTO `geradores_geradores` (`id`, `nome`, `uc`, `status`, `distribuidora_
 
 
 --
--- Despejando dados para a tabela `relatorios_armazenamentomensal`
+-- Despejando dados para a tabela `Relatorios_armazenamentomensal`
 --
 
-INSERT INTO `relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (45905, '103710124', '072019', '0', 1, 1, 1),
 (45906, '103710124', '082019', '0', 1, 1, 1),
 (45907, '103710124', '092019', '0', 1, 1, 1),
@@ -2051,7 +1720,7 @@ INSERT INTO `relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`,
 (48490, ' 21909386 ', ' 062022 ', ' 22 ', 1, 2, 1),
 (48491, ' 21909386 ', ' 072022 ', ' 315 ', 1, 2, 1),
 (48492, ' 21909386 ', ' 082022 ', ' -40 ', 1, 2, 1);
-INSERT INTO `relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (48493, ' 21909386 ', ' 092022 ', ' 501 ', 1, 2, 1),
 (48494, ' 21909386 ', ' 102022 ', ' 189 ', 1, 2, 1),
 (48495, ' 21909386 ', ' 112022 ', ' -605 ', 1, 2, 1),
@@ -2302,10 +1971,10 @@ INSERT INTO `relatorios_armazenamentomensal` (`id`, `uc`, `Referencia`, `valor`,
 
 
 --
--- Despejando dados para a tabela `relatorios_armazenamentototal`
+-- Despejando dados para a tabela `Relatorios_armazenamentototal`
 --
 
-INSERT INTO `relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (46273, '103710124', '072019', '0', 1, 1, 1),
 (46274, '103710124', '082019', '0', 1, 1, 1),
 (46275, '103710124', '092019', '0', 1, 1, 1),
@@ -3386,7 +3055,7 @@ INSERT INTO `relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, 
 (48853, ' 53903541 ', ' 072018 ', ' 0 ', 1, 2, 1),
 (48854, ' 53903541 ', ' 082018 ', ' 0 ', 1, 2, 1),
 (48855, ' 53903541 ', ' 092018 ', ' 0 ', 1, 2, 1);
-INSERT INTO `relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
+INSERT INTO `Relatorios_armazenamentototal` (`id`, `uc`, `Referencia`, `valor`, `admin_id`, `distribuidora_id`, `cliente_id`) VALUES
 (48856, ' 53903541 ', ' 102018 ', ' 0 ', 1, 2, 1),
 (48857, ' 53903541 ', ' 112018 ', ' 0 ', 1, 2, 1),
 (48858, ' 53903541 ', ' 122018 ', ' 0 ', 1, 2, 1),
@@ -5225,10 +4894,10 @@ INSERT INTO `relatorios_gerador_celesc` (`id`, `uc`, `valor`, `Referencia`, `Sal
 -- --------------------------------------------------------
 
 --
--- Despejando dados para a tabela `relatorios_historico`
+-- Despejando dados para a tabela `Relatorios_historico`
 --
 
-INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
+INSERT INTO `Relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
 (2330, '48966365', '072018', '0', '0', '0', '0', '0', '-45.63', '0', '-45.63', '0', '0', 1, 1, 2),
 (2331, '48966365', '082018', '0', '0', '0', '0', '0', '-45.05', '0', '-45.05', '0', '0', 1, 1, 2),
 (2332, '48966365', '092018', '18640.23', '38020', '18590.93', '16217.0', '0.43', '16167.7', '0.43', '16167.7', '0.49', '0.49', 1, 1, 2),
@@ -5686,7 +5355,7 @@ INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `spl
 (2791, '52496373', '122021', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (2792, '52496373', '012022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (2793, '52496373', '022022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2);
-INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
+INSERT INTO `Relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
 (2794, '52496373', '032022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (2795, '52496373', '042022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (2796, '52496373', '052022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
@@ -6146,7 +5815,7 @@ INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `spl
 (3252, '11677058', '052022', '0', '0', '0', '0', '0', '0', '0', '1533.0', '0', '0', 1, 1, 2),
 (3253, '11677058', '062022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (3254, '11677058', '072022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2);
-INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
+INSERT INTO `Relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
 (3255, '11677058', '082022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (3256, '11677058', '092022', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (3257, '11677058', '102022', '4411.27', '6641', '2899.41', '3749.58', '0.56', '2999.66', '0.45', '2716.19', '0.66', '0', 1, 1, 2),
@@ -6642,7 +6311,7 @@ INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `spl
 (3747, '84802847', '082019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (3748, '84802847', '092019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (3749, '84802847', '102019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2);
-INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
+INSERT INTO `Relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `splitConsumo`, `faturaGerador`, `descontoCliente`, `splitCliente`, `descontoGerador`, `splitGerador`, `descontoImpostos`, `splitBruto`, `splitFatura`, `admin_id`, `cliente_id`, `distribuidora_id`) VALUES
 (3750, '84802847', '112019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (3751, '84802847', '122019', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
 (3752, '84802847', '012020', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1, 1, 2),
@@ -6692,9 +6361,9 @@ INSERT INTO `relatorios_historico` (`id`, `uc`, `Referencia`, `ValorBruto`, `spl
 --
 
 --
--- Índices de tabela `administradores_administradores`
+-- Índices de tabela `Administradores_administradores`
 --
-ALTER TABLE `administradores_administradores`
+ALTER TABLE `Administradores_administradores`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Administradores_admi_distribuidora_id_fcc8dcbd_fk_Distribui` (`distribuidora_id`);
 
@@ -6744,15 +6413,15 @@ ALTER TABLE `auth_user_user_permissions`
   ADD KEY `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` (`permission_id`);
 
 --
--- Índices de tabela `clientes_clientes`
+-- Índices de tabela `Clientes_clientes`
 --
-ALTER TABLE `clientes_clientes`
+ALTER TABLE `Clientes_clientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `consumidores_consumidores`
+-- Índices de tabela `Consumidores_consumidores`
 --
-ALTER TABLE `consumidores_consumidores`
+ALTER TABLE `Consumidores_consumidores`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Consumidores_consumi_admin_id_be626636_fk_Administr` (`admin_id`),
   ADD KEY `Consumidores_consumi_cliente_id_4417d56f_fk_Clientes_` (`cliente_id`),
@@ -6760,9 +6429,9 @@ ALTER TABLE `consumidores_consumidores`
   ADD KEY `Consumidores_consumi_gerador_id_12e1348e_fk_Geradores` (`gerador_id`);
 
 --
--- Índices de tabela `distribuidoras_distribuidoras`
+-- Índices de tabela `Distribuidoras_distribuidoras`
 --
-ALTER TABLE `distribuidoras_distribuidoras`
+ALTER TABLE `Distribuidoras_distribuidoras`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Distribuidoras_distr_cliente_id_10419182_fk_Clientes_` (`cliente_id`);
 
@@ -6801,27 +6470,27 @@ ALTER TABLE `extracao_document`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `geradores_geradores`
+-- Índices de tabela `Geradores_geradores`
 --
-ALTER TABLE `geradores_geradores`
+ALTER TABLE `Geradores_geradores`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Geradores_geradores_distribuidora_id_32db43c8_fk_Distribui` (`distribuidora_id`),
   ADD KEY `Geradores_geradores_admin_id_7fc765ec_fk_Administr` (`admin_id`),
   ADD KEY `Geradores_geradores_cliente_id_87338a94_fk_Clientes_clientes_id` (`cliente_id`);
 
 --
--- Índices de tabela `relatorios_armazenamentomensal`
+-- Índices de tabela `Relatorios_armazenamentomensal`
 --
-ALTER TABLE `relatorios_armazenamentomensal`
+ALTER TABLE `Relatorios_armazenamentomensal`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Relatorios_armazenam_admin_id_f32c97ab_fk_Administr` (`admin_id`),
   ADD KEY `Relatorios_armazenam_distribuidora_id_2c9d6bba_fk_Distribui` (`distribuidora_id`),
   ADD KEY `Relatorios_armazenam_cliente_id_8d9db321_fk_Clientes_` (`cliente_id`);
 
 --
--- Índices de tabela `relatorios_armazenamentototal`
+-- Índices de tabela `Relatorios_armazenamentototal`
 --
-ALTER TABLE `relatorios_armazenamentototal`
+ALTER TABLE `Relatorios_armazenamentototal`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Relatorios_armazenam_admin_id_c37afcc1_fk_Administr` (`admin_id`),
   ADD KEY `Relatorios_armazenam_distribuidora_id_02ed4648_fk_Distribui` (`distribuidora_id`),
@@ -6882,9 +6551,9 @@ ALTER TABLE `relatorios_gerador_celesc`
   ADD KEY `Relatorios_gerador_c_distribuidora_id_9f2e0da3_fk_Distribui` (`distribuidora_id`);
 
 --
--- Índices de tabela `relatorios_historico`
+-- Índices de tabela `Relatorios_historico`
 --
-ALTER TABLE `relatorios_historico`
+ALTER TABLE `Relatorios_historico`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Relatorios_historico_admin_id_0e29f81f_fk_Administr` (`admin_id`),
   ADD KEY `Relatorios_historico_cliente_id_8e07bdef_fk_Clientes_clientes_id` (`cliente_id`),
@@ -6895,9 +6564,9 @@ ALTER TABLE `relatorios_historico`
 --
 
 --
--- AUTO_INCREMENT de tabela `administradores_administradores`
+-- AUTO_INCREMENT de tabela `Administradores_administradores`
 --
-ALTER TABLE `administradores_administradores`
+ALTER TABLE `Administradores_administradores`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -6937,21 +6606,21 @@ ALTER TABLE `auth_user_user_permissions`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `clientes_clientes`
+-- AUTO_INCREMENT de tabela `Clientes_clientes`
 --
-ALTER TABLE `clientes_clientes`
+ALTER TABLE `Clientes_clientes`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de tabela `consumidores_consumidores`
+-- AUTO_INCREMENT de tabela `Consumidores_consumidores`
 --
-ALTER TABLE `consumidores_consumidores`
+ALTER TABLE `Consumidores_consumidores`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=537;
 
 --
--- AUTO_INCREMENT de tabela `distribuidoras_distribuidoras`
+-- AUTO_INCREMENT de tabela `Distribuidoras_distribuidoras`
 --
-ALTER TABLE `distribuidoras_distribuidoras`
+ALTER TABLE `Distribuidoras_distribuidoras`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -6979,21 +6648,21 @@ ALTER TABLE `extracao_document`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=278;
 
 --
--- AUTO_INCREMENT de tabela `geradores_geradores`
+-- AUTO_INCREMENT de tabela `Geradores_geradores`
 --
-ALTER TABLE `geradores_geradores`
+ALTER TABLE `Geradores_geradores`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
--- AUTO_INCREMENT de tabela `relatorios_armazenamentomensal`
+-- AUTO_INCREMENT de tabela `Relatorios_armazenamentomensal`
 --
-ALTER TABLE `relatorios_armazenamentomensal`
+ALTER TABLE `Relatorios_armazenamentomensal`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48738;
 
 --
--- AUTO_INCREMENT de tabela `relatorios_armazenamentototal`
+-- AUTO_INCREMENT de tabela `Relatorios_armazenamentototal`
 --
-ALTER TABLE `relatorios_armazenamentototal`
+ALTER TABLE `Relatorios_armazenamentototal`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49089;
 
 --
@@ -7033,9 +6702,9 @@ ALTER TABLE `relatorios_gerador_celesc`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=545;
 
 --
--- AUTO_INCREMENT de tabela `relatorios_historico`
+-- AUTO_INCREMENT de tabela `Relatorios_historico`
 --
-ALTER TABLE `relatorios_historico`
+ALTER TABLE `Relatorios_historico`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3793;
 
 --
@@ -7043,10 +6712,10 @@ ALTER TABLE `relatorios_historico`
 --
 
 --
--- Restrições para tabelas `administradores_administradores`
+-- Restrições para tabelas `Administradores_administradores`
 --
-ALTER TABLE `administradores_administradores`
-  ADD CONSTRAINT `Administradores_admi_distribuidora_id_fcc8dcbd_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+ALTER TABLE `Administradores_administradores`
+  ADD CONSTRAINT `Administradores_admi_distribuidora_id_fcc8dcbd_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
 -- Restrições para tabelas `auth_group_permissions`
@@ -7076,19 +6745,19 @@ ALTER TABLE `auth_user_user_permissions`
   ADD CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`);
 
 --
--- Restrições para tabelas `consumidores_consumidores`
+-- Restrições para tabelas `Consumidores_consumidores`
 --
-ALTER TABLE `consumidores_consumidores`
-  ADD CONSTRAINT `Consumidores_consumi_admin_id_be626636_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Consumidores_consumi_cliente_id_4417d56f_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Consumidores_consumi_distribuidora_id_6c6d67c5_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`),
-  ADD CONSTRAINT `Consumidores_consumi_gerador_id_12e1348e_fk_Geradores` FOREIGN KEY (`gerador_id`) REFERENCES `geradores_geradores` (`id`);
+ALTER TABLE `Consumidores_consumidores`
+  ADD CONSTRAINT `Consumidores_consumi_admin_id_be626636_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Consumidores_consumi_cliente_id_4417d56f_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Consumidores_consumi_distribuidora_id_6c6d67c5_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`),
+  ADD CONSTRAINT `Consumidores_consumi_gerador_id_12e1348e_fk_Geradores` FOREIGN KEY (`gerador_id`) REFERENCES `Geradores_geradores` (`id`);
 
 --
--- Restrições para tabelas `distribuidoras_distribuidoras`
+-- Restrições para tabelas `Distribuidoras_distribuidoras`
 --
-ALTER TABLE `distribuidoras_distribuidoras`
-  ADD CONSTRAINT `Distribuidoras_distr_cliente_id_10419182_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`);
+ALTER TABLE `Distribuidoras_distribuidoras`
+  ADD CONSTRAINT `Distribuidoras_distr_cliente_id_10419182_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`);
 
 --
 -- Restrições para tabelas `django_admin_log`
@@ -7098,84 +6767,84 @@ ALTER TABLE `django_admin_log`
   ADD CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`);
 
 --
--- Restrições para tabelas `geradores_geradores`
+-- Restrições para tabelas `Geradores_geradores`
 --
-ALTER TABLE `geradores_geradores`
-  ADD CONSTRAINT `Geradores_geradores_admin_id_7fc765ec_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Geradores_geradores_cliente_id_87338a94_fk_Clientes_clientes_id` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Geradores_geradores_distribuidora_id_32db43c8_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+ALTER TABLE `Geradores_geradores`
+  ADD CONSTRAINT `Geradores_geradores_admin_id_7fc765ec_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Geradores_geradores_cliente_id_87338a94_fk_Clientes_clientes_id` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Geradores_geradores_distribuidora_id_32db43c8_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
--- Restrições para tabelas `relatorios_armazenamentomensal`
+-- Restrições para tabelas `Relatorios_armazenamentomensal`
 --
-ALTER TABLE `relatorios_armazenamentomensal`
-  ADD CONSTRAINT `Relatorios_armazenam_admin_id_f32c97ab_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Relatorios_armazenam_cliente_id_8d9db321_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Relatorios_armazenam_distribuidora_id_2c9d6bba_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+ALTER TABLE `Relatorios_armazenamentomensal`
+  ADD CONSTRAINT `Relatorios_armazenam_admin_id_f32c97ab_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Relatorios_armazenam_cliente_id_8d9db321_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Relatorios_armazenam_distribuidora_id_2c9d6bba_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
--- Restrições para tabelas `relatorios_armazenamentototal`
+-- Restrições para tabelas `Relatorios_armazenamentototal`
 --
-ALTER TABLE `relatorios_armazenamentototal`
-  ADD CONSTRAINT `Relatorios_armazenam_admin_id_c37afcc1_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Relatorios_armazenam_cliente_id_343ef5e1_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Relatorios_armazenam_distribuidora_id_02ed4648_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+ALTER TABLE `Relatorios_armazenamentototal`
+  ADD CONSTRAINT `Relatorios_armazenam_admin_id_c37afcc1_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Relatorios_armazenam_cliente_id_343ef5e1_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Relatorios_armazenam_distribuidora_id_02ed4648_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
 -- Restrições para tabelas `relatorios_azul`
 --
 ALTER TABLE `relatorios_azul`
-  ADD CONSTRAINT `Relatorios_azul_admin_id_e7bf9cae_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Relatorios_azul_cliente_id_abcbf08b_fk_Clientes_clientes_id` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Relatorios_azul_distribuidora_id_7d4849ff_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+  ADD CONSTRAINT `Relatorios_azul_admin_id_e7bf9cae_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Relatorios_azul_cliente_id_abcbf08b_fk_Clientes_clientes_id` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Relatorios_azul_distribuidora_id_7d4849ff_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
 -- Restrições para tabelas `relatorios_azul_celesc`
 --
 ALTER TABLE `relatorios_azul_celesc`
-  ADD CONSTRAINT `Relatorios_azul_cele_admin_id_ce556d6e_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Relatorios_azul_cele_cliente_id_588ddfde_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Relatorios_azul_cele_distribuidora_id_79926fc9_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+  ADD CONSTRAINT `Relatorios_azul_cele_admin_id_ce556d6e_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Relatorios_azul_cele_cliente_id_588ddfde_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Relatorios_azul_cele_distribuidora_id_79926fc9_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
 -- Restrições para tabelas `relatorios_consumidor`
 --
 ALTER TABLE `relatorios_consumidor`
-  ADD CONSTRAINT `Relatorios_consumido_admin_id_f35223e5_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Relatorios_consumido_cliente_id_059932f4_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Relatorios_consumido_distribuidora_id_6008190f_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+  ADD CONSTRAINT `Relatorios_consumido_admin_id_f35223e5_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Relatorios_consumido_cliente_id_059932f4_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Relatorios_consumido_distribuidora_id_6008190f_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
 -- Restrições para tabelas `relatorios_consumidor_celesc`
 --
 ALTER TABLE `relatorios_consumidor_celesc`
-  ADD CONSTRAINT `Relatorios_consumido_admin_id_7924db34_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Relatorios_consumido_cliente_id_7e48b98e_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Relatorios_consumido_distribuidora_id_403bd685_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+  ADD CONSTRAINT `Relatorios_consumido_admin_id_7924db34_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Relatorios_consumido_cliente_id_7e48b98e_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Relatorios_consumido_distribuidora_id_403bd685_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
 -- Restrições para tabelas `relatorios_gerador`
 --
 ALTER TABLE `relatorios_gerador`
-  ADD CONSTRAINT `Relatorios_gerador_admin_id_df0ae156_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Relatorios_gerador_cliente_id_03ab5584_fk_Clientes_clientes_id` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Relatorios_gerador_distribuidora_id_c776fe37_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+  ADD CONSTRAINT `Relatorios_gerador_admin_id_df0ae156_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Relatorios_gerador_cliente_id_03ab5584_fk_Clientes_clientes_id` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Relatorios_gerador_distribuidora_id_c776fe37_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
 -- Restrições para tabelas `relatorios_gerador_celesc`
 --
 ALTER TABLE `relatorios_gerador_celesc`
-  ADD CONSTRAINT `Relatorios_gerador_c_admin_id_f258c828_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Relatorios_gerador_c_cliente_id_a4e1618b_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Relatorios_gerador_c_distribuidora_id_9f2e0da3_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+  ADD CONSTRAINT `Relatorios_gerador_c_admin_id_f258c828_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Relatorios_gerador_c_cliente_id_a4e1618b_fk_Clientes_` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Relatorios_gerador_c_distribuidora_id_9f2e0da3_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 
 --
--- Restrições para tabelas `relatorios_historico`
+-- Restrições para tabelas `Relatorios_historico`
 --
-ALTER TABLE `relatorios_historico`
-  ADD CONSTRAINT `Relatorios_historico_admin_id_0e29f81f_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `administradores_administradores` (`id`),
-  ADD CONSTRAINT `Relatorios_historico_cliente_id_8e07bdef_fk_Clientes_clientes_id` FOREIGN KEY (`cliente_id`) REFERENCES `clientes_clientes` (`id`),
-  ADD CONSTRAINT `Relatorios_historico_distribuidora_id_f36c1603_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `distribuidoras_distribuidoras` (`id`);
+ALTER TABLE `Relatorios_historico`
+  ADD CONSTRAINT `Relatorios_historico_admin_id_0e29f81f_fk_Administr` FOREIGN KEY (`admin_id`) REFERENCES `Administradores_administradores` (`id`),
+  ADD CONSTRAINT `Relatorios_historico_cliente_id_8e07bdef_fk_Clientes_clientes_id` FOREIGN KEY (`cliente_id`) REFERENCES `Clientes_clientes` (`id`),
+  ADD CONSTRAINT `Relatorios_historico_distribuidora_id_f36c1603_fk_Distribui` FOREIGN KEY (`distribuidora_id`) REFERENCES `Distribuidoras_distribuidoras` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
