@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Despejando dados para a tabela `clientes_clientes`
 --
 
-INSERT INTO `clientes_clientes` (`id`, `nome`, `end`, `fone`, `status`) VALUES
+INSERT INTO `Clientes_clientes` (`id`, `nome`, `end`, `fone`, `status`) VALUES
 (1, 'CLAMED', 'End. ficticio ', '879999999', 1);
 
 
