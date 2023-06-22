@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Energee.wsgi.application'
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.mysql',
-'NAME': 'sistema_energee',
+'NAME': 'sistemadegestao_energee',
 'USER': 'root',
 'PASSWORD': '1234',
 'HOST': 'localhost',
