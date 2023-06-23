@@ -13,8 +13,8 @@ class Consumidores(models.Model):
     admin = models.ForeignKey(Administradores, on_delete=models.SET_NULL, null=True)
     cliente = models.ForeignKey(Clientes, on_delete=models.SET_NULL, null=True)
 
-    class Meta:
-        db_table = 'consumidores_consumidores'
+    """class Meta:
+        db_table = 'consumidores_consumidores'"""
         
     def __str__(self) -> str:
         return self.nome
