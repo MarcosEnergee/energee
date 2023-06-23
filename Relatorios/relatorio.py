@@ -55,7 +55,7 @@ class Relatorio:
         return resultado
     
     def GeracaoGraficoAdmin(self):
-        query = ' SELECT uc,Referencia, SUM(Energia_Injetada) FROM `Relatorios_gerador` GROUP BY Referencia'
+        query = ' SELECT uc, Referencia, SUM(Energia_Injetada) FROM `Relatorios_gerador` GROUP BY uc, Referencia '
 
         cursor = connection.cursor()
         cursor.execute(query)
