@@ -20,7 +20,7 @@ def AlimentaSelectDist(request,cli):
         if len(distribuidoras)>0:
             dist = []
             for i in distribuidoras:
-                dist.append(f'<option value="{i[0]}" >{i[1]}</option>')
+                dist.append(f'<option value="89" >Selecione a Distribuidora</option><option value="{i[0]}" >{i[1]}</option>')
 
                 data_json = {'distribuidoras':dist}
         else:
